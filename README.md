@@ -769,3 +769,5 @@ Cảm ơn các cá nhân và tổ chức đã hỗ trợ dự án:
 ---
 
 © 2024 AI_Agri. All rights reserved.
+#   b l o c k c h a i n _ A I _ A g r i  
+ 
