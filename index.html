@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI_Agri - Hệ Thống Phát Hiện Bệnh Lúa</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #dbeafe;
+            --success: #059669;
+            --success-light: #d1fae5;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --white: #ffffff;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .account-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ===== GRID LAYOUT ===== */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            background: var(--gray-50);
+        }
+
+        .card-header h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* ===== UPLOAD AREA ===== */
+        .upload-area {
+            border: 2px dashed var(--primary);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--primary-light);
+        }
+
+        .upload-area:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary-dark);
+        }
+
+        .upload-area.drag-over {
+            background: var(--primary);
+            color: var(--white);
+            border-width: 3px;
+        }
+
+        .upload-area input {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-text {
+            font-weight: 500;
+        }
+
+        .upload-subtext {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== BUTTONS ===== */
+        button {
+            font-family: inherit;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #047857;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #b91c1c;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        /* ===== PREVIEW IMAGE ===== */
+        .image-preview {
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== DISEASES & RESULTS ===== */
+        .diseases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .disease-card {
+            background: var(--warning-light);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+
+        .disease-card strong {
+            color: var(--gray-900);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .disease-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== ADVICE BOX ===== */
+        .advice-box {
+            background: var(--success-light);
+            border-left: 4px solid var(--success);
+            padding: 1.25rem;
+            border-radius: 0.375rem;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+
+        .advice-box strong {
+            color: var(--gray-900);
+        }
+
+        /* ===== STATUS MESSAGES ===== */
+        .alert {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            display: none;
+            border-left: 4px solid;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert.active {
+            display: block;
+        }
+
+        .alert-success {
+            background: var(--success-light);
+            border-color: var(--success);
+            color: #065f46;
+        }
+
+        .alert-error {
+            background: var(--danger-light);
+            border-color: var(--danger);
+            color: #7f1d1d;
+        }
+
+        .alert-info {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: #1e3a8a;
+        }
+
+        .alert-warning {
+            background: var(--warning-light);
+            border-color: var(--warning);
+            color: #78350f;
+        }
+
+        /* ===== BLOCKCHAIN INFO ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: var(--gray-50);
+            padding: 1rem;
+            border-radius: 0.375rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .info-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: var(--gray-900);
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+
+        /* ===== TRANSACTION INFO ===== */
+        .transaction-box {
+            background: var(--success-light);
+            border-left: 4px solid var(--success);
+            padding: 1.25rem;
+            border-radius: 0.375rem;
+            margin: 1rem 0;
+        }
+
+        .tx-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tx-item:last-child {
+            border-bottom: none;
+        }
+
+        .tx-label {
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .tx-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--gray-900);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        /* ===== RECORDS LIST ===== */
+        .records-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .record-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.375rem;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: start;
+            transition: all 0.3s ease;
+        }
+
+        .record-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .record-image {
+            width: 80px;
+            height: 80px;
+            background: var(--gray-200);
+            border-radius: 0.375rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .record-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .record-info {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .record-disease {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .record-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .record-badge {
+            display: inline-block;
+            background: var(--success-light);
+            color: var(--success);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-500);
+            padding: 0;
+            width: auto;
+            height: auto;
+        }
+
+        .close-btn:hover {
+            color: var(--gray-900);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        /* ===== CAMERA PREVIEW ===== */
+        #cameraPreview {
+            margin: 1rem 0;
+            background: var(--gray-900);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        #cameraVideo {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: var(--gray-900);
+        }
+
+        .camera-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header-content {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .logo-icon {
+                font-size: 1.25rem;
+            }
+
+            .main-grid {
+                gap: 1rem;
+            }
+
+            .diseases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+
+            button {
+                padding: 0.625rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌾</span>
+                <span>AI_Agri</span>
+            </a>
+            <div class="header-actions">
+                <button class="btn-primary" id="connectBtn">🔗 Kết Nối Blockchain</button>
+                <div class="account-badge" id="accountInfo">Chưa kết nối</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- ALERTS -->
+        <div id="alert" class="alert"></div>
+
+        <!-- MAIN GRID -->
+        <div class="main-grid">
+            <!-- LEFT: DETECTION -->
+            <div>
+                <!-- UPLOAD CARD -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>📷 Phát Hiện Bệnh</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- QUICK ACTIONS -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+                            <button class="btn-primary btn-block btn-icon" id="loadPhoneBtn">
+                                <span>📱</span>
+                                <span>Load Điện Thoại</span>
+                            </button>
+                            <button class="btn-secondary btn-block btn-icon" id="startCameraBtn">
+                                <span>📹</span>
+                                <span>Mở Camera</span>
+                            </button>
+                        </div>
+
+                        <!-- CAMERA PREVIEW -->
+                        <div id="cameraPreview" style="display: none;">
+                            <video id="cameraVideo" playsinline autoplay></video>
+                            <div class="camera-controls">
+                                <button class="btn-secondary btn-block" id="captureBtn">📸 Chụp Ảnh</button>
+                                <button class="btn-danger btn-block" id="closeCameraBtn">✕ Đóng</button>
+                            </div>
+                        </div>
+
+                        <!-- UPLOAD AREA -->
+                        <div class="upload-area" onclick="document.getElementById('imageInput').click()">
+                            <div class="upload-icon">📁</div>
+                            <div class="upload-text">Chọn ảnh hoặc kéo thả</div>
+                            <div class="upload-subtext">JPG, PNG hoặc GIF (tối đa 10MB)</div>
+                            <input type="file" id="imageInput" accept="image/*">
+                        </div>
+
+                        <!-- IMAGE PREVIEW -->
+                        <div id="imagePreviewContainer" style="display: none;">
+                            <div class="image-preview">
+                                <img id="previewImg" alt="Preview">
+                            </div>
+                            <button class="btn-secondary btn-block" id="detectBtn" style="margin-top: 1rem;">
+                                🔍 Phát Hiện Bệnh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESULTS CARD -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <h2>📋 Kết Quả Phân Tích</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="noResultMsg" style="text-align: center; color: var(--gray-500); padding: 2rem 0;">
+                            📸 Upload ảnh để bắt đầu phân tích
+                        </div>
+
+                        <div id="resultContainer" style="display: none;">
+                            <!-- DISEASES -->
+                            <div>
+                                <h3 style="font-weight: 600; margin-bottom: 0.75rem;">🚨 Bệnh Phát Hiện</h3>
+                                <div id="diseasesList" class="diseases-grid"></div>
+                            </div>
+
+                            <!-- ADVICE -->
+                            <div id="adviceContainer"></div>
+
+                            <!-- MEDICATIONS -->
+                            <div>
+                                <h3 style="font-weight: 600; margin-bottom: 0.75rem;">💊 Thuốc Điều Trị</h3>
+                                <div id="medicationsList" class="diseases-grid"></div>
+                            </div>
+
+                            <!-- SAVE BUTTON -->
+                            <button class="btn-secondary btn-block" id="saveBtn" style="margin-top: 1.5rem;">
+                                💾 Lưu lên Blockchain
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: BLOCKCHAIN -->
+            <div>
+                <!-- BLOCKCHAIN STATUS CARD -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>⛓️ Blockchain Status</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-grid">
+                            <div class="info-box">
+                                <div class="info-label">Network</div>
+                                <div class="info-value">Ganache Local</div>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-label">Chain ID</div>
+                                <div class="info-value">1337</div>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-label">RPC URL</div>
+                                <div class="info-value">127.0.0.1:8545</div>
+                            </div>
+                        </div>
+
+                        <div id="blockchainInfo" style="margin-top: 1rem;"></div>
+
+                        <!-- TRANSACTION INFO -->
+                        <div id="transactionBox" style="display: none;">
+                            <div class="transaction-box">
+                                <div class="tx-item">
+                                    <span class="tx-label">✅ Status</span>
+                                    <span class="tx-value">Confirmed</span>
+                                </div>
+                                <div class="tx-item">
+                                    <span class="tx-label">TX Hash</span>
+                                    <span class="tx-value" id="txHashDisplay">-</span>
+                                </div>
+                                <div class="tx-item">
+                                    <span class="tx-label">Block</span>
+                                    <span class="tx-value" id="blockNumberDisplay">-</span>
+                                </div>
+                                <div class="tx-item">
+                                    <span class="tx-label">Gas Used</span>
+                                    <span class="tx-value" id="gasUsedDisplay">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HISTORY CARD -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <h2>📜 Lịch Sử Gần Đây</h2>
+                    </div>
+                    <div class="card-body">
+                        <button class="btn-primary btn-block" style="margin-bottom: 1rem;" onclick="openHistoryModal()">
+                            📂 Xem Tất Cả Lịch Sử
+                        </button>
+                        <div id="recordsContainer" class="records-list">
+                            <p style="text-align: center; color: var(--gray-500);">Chưa có lịch sử</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISTORY MODAL -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">📜 Lịch Sử Bệnh Lúa</h2>
+                <button class="close-btn" onclick="closeHistoryModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- STATS -->
+                <div class="info-grid" style="margin-bottom: 2rem;">
+                    <div class="info-box">
+                        <div class="info-label">💾 Records Local</div>
+                        <div class="info-value" style="font-size: 1.5rem;">
+                            <span id="localCount">0</span>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">⛓️ Blockchain</div>
+                        <div class="info-value" style="font-size: 1.5rem;">
+                            <span id="blockchainCount">0</span>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">💰 Balance</div>
+                        <div class="info-value" style="font-size: 1.5rem;">
+                            <span id="accountBalance">-</span> ETH
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECORDS LIST -->
+                <div id="historyDetailContainer" class="records-list">
+                    <p style="text-align: center; color: var(--gray-500);">Đang tải...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // CONFIG
+        const API_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+        const CONTRACT_ADDRESS = "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24";
+        const CONTRACT_ABI = [
+            {
+                "inputs": [
+                    {"internalType": "string", "name": "imageHash", "type": "string"},
+                    {"internalType": "string[]", "name": "diseases", "type": "string[]"},
+                    {"internalType": "string[]", "name": "medications", "type": "string[]"},
+                    {"internalType": "string", "name": "advice", "type": "string"},
+                    {"internalType": "string", "name": "temperature", "type": "string"},
+                    {"internalType": "string", "name": "humidity", "type": "string"}
+                ],
+                "name": "createRecord",
+                "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+
+        // STATE
+        let provider;
+        let signer;
+        let contract;
+        let userAccount;
+        let currentDetectionData = null;
+        let currentStream = null;
+
+        // EVENT LISTENERS
+        document.getElementById('connectBtn').addEventListener('click', connectWallet);
+        document.getElementById('imageInput').addEventListener('change', handleImageUpload);
+        document.getElementById('detectBtn').addEventListener('click', detectDisease);
+        document.getElementById('saveBtn').addEventListener('click', saveToBlockchain);
+        document.getElementById('loadPhoneBtn').addEventListener('click', loadPhoneImage);
+        document.getElementById('startCameraBtn').addEventListener('click', startCamera);
+        document.getElementById('closeCameraBtn').addEventListener('click', stopCamera);
+        document.getElementById('captureBtn').addEventListener('click', capturePhoto);
+
+        // DRAG & DROP
+        const uploadArea = document.querySelector('.upload-area');
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            document.getElementById('imageInput').files = e.dataTransfer.files;
+            handleImageUpload({ target: { files: e.dataTransfer.files } });
+        });
+
+        // FUNCTIONS
+        async function connectWallet() {
+            try {
+                if (!window.ethereum) {
+                    showAlert('❌ MetaMask không được tìm thấy. Vui lòng cài đặt MetaMask!', 'error');
+                    return;
+                }
+
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                userAccount = accounts[0];
+
+                provider = new ethers.BrowserProvider(window.ethereum);
+                signer = await provider.getSigner();
+                contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+
+                document.getElementById('connectBtn').textContent = '✅ Đã kết nối';
+                document.getElementById('connectBtn').disabled = true;
+                document.getElementById('accountInfo').textContent = userAccount.substring(0, 6) + '...' + userAccount.substring(userAccount.length - 4);
+
+                showAlert(`✅ Kết nối thành công với ${userAccount.substring(0, 6)}...`, 'success');
+                loadBlockchainInfo();
+                loadRecords();
+            } catch (error) {
+                showAlert(`❌ Lỗi: ${error.message}`, 'error');
+            }
+        }
+
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById('previewImg').src = event.target.result;
+                document.getElementById('imagePreviewContainer').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function loadPhoneImage() {
+            try {
+                showAlert('📱 Đang load ảnh từ điện thoại...', 'info');
+                const response = await fetch(`${API_URL}/api/phone/get-latest`);
+                const result = await response.json();
+
+                if (!response.ok) throw new Error(result.message || result.error);
+
+                const binaryString = atob(result.image_base64);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) bytes[i] = binaryString.charCodeAt(i);
+                const blob = new Blob([bytes], { type: 'image/jpeg' });
+
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(new File([blob], result.filename, { type: 'image/jpeg' }));
+                document.getElementById('imageInput').files = dataTransfer.files;
+
+                document.getElementById('previewImg').src = `data:image/jpeg;base64,${result.image_base64}`;
+                document.getElementById('imagePreviewContainer').style.display = 'block';
+
+                showAlert('✅ Ảnh được tải từ điện thoại', 'success');
+            } catch (error) {
+                showAlert(`❌ Lỗi: ${error.message}`, 'error');
+            }
+        }
+
+        async function startCamera() {
+            try {
+                const video = document.getElementById('cameraVideo');
+                currentStream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } },
+                    audio: false
+                });
+                video.srcObject = currentStream;
+                document.getElementById('cameraPreview').style.display = 'block';
+                document.getElementById('startCameraBtn').style.display = 'none';
+                showAlert('✅ Camera đã bật', 'success');
+            } catch (error) {
+                showAlert(`❌ Không thể mở camera: ${error.message}`, 'error');
+            }
+        }
+
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+            }
+            document.getElementById('cameraPreview').style.display = 'none';
+            document.getElementById('startCameraBtn').style.display = 'block';
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0);
+
+            canvas.toBlob((blob) => {
+                const file = new File([blob], `rice-leaf-${Date.now()}.jpg`, { type: 'image/jpeg' });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                document.getElementById('imageInput').files = dataTransfer.files;
+
+                document.getElementById('previewImg').src = canvas.toDataURL('image/jpeg');
+                document.getElementById('imagePreviewContainer').style.display = 'block';
+                stopCamera();
+                showAlert('✅ Ảnh đã chụp thành công!', 'success');
+            }, 'image/jpeg', 0.95);
+        }
+
+        async function detectDisease() {
+            try {
+                const fileInput = document.getElementById('imageInput');
+                if (!fileInput.files[0]) {
+                    showAlert('Vui lòng chọn ảnh', 'error');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('image', fileInput.files[0]);
+
+                showAlert('🔍 Đang phát hiện bệnh...', 'info');
+
+                const response = await fetch(`${API_URL}/api/detect`, { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (!response.ok) throw new Error(result.error);
+
+                currentDetectionData = result;
+
+                document.getElementById('previewImg').src = result.annotated_image_base64 || document.getElementById('previewImg').src;
+
+                document.getElementById('diseasesList').innerHTML = result.diseases
+                    .map(d => `<div class="disease-card"><strong>${d}</strong><div class="disease-badge">🚨 Phát hiện</div></div>`)
+                    .join('');
+
+                document.getElementById('adviceContainer').innerHTML = `<div class="advice-box"><strong>💡 Lời Khuyên:</strong><br>${result.advice.replace(/\n/g, '<br>')}</div>`;
+
+                document.getElementById('medicationsList').innerHTML = (result.medications || [])
+                    .map(m => `<div class="disease-card"><strong>${m}</strong><div class="disease-badge">💊 Thuốc</div></div>`)
+                    .join('');
+
+                document.getElementById('resultContainer').style.display = 'block';
+                document.getElementById('noResultMsg').style.display = 'none';
+
+                showAlert('✅ Phát hiện hoàn tất', 'success');
+            } catch (error) {
+                showAlert(`❌ Lỗi: ${error.message}`, 'error');
+            }
+        }
+
+        async function saveToBlockchain() {
+            try {
+                if (!signer) {
+                    showAlert('❌ Vui lòng kết nối MetaMask trước', 'error');
+                    return;
+                }
+                if (!currentDetectionData) {
+                    showAlert('❌ Vui lòng phát hiện bệnh trước', 'error');
+                    return;
+                }
+
+                showAlert('💾 Đang lưu lên blockchain...', 'info');
+
+                const tx = await contract.createRecord(
+                    currentDetectionData.image_hash,
+                    currentDetectionData.diseases,
+                    currentDetectionData.medications,
+                    currentDetectionData.advice.substring(0, 500),
+                    "",
+                    ""
+                );
+
+                showAlert('⏳ Chờ transaction được xác nhận...', 'info');
+                const receipt = await tx.wait();
+
+                document.getElementById('transactionBox').style.display = 'block';
+                document.getElementById('txHashDisplay').textContent = tx.hash.substring(0, 16) + '...';
+                document.getElementById('blockNumberDisplay').textContent = receipt.blockNumber;
+                document.getElementById('gasUsedDisplay').textContent = receipt.gasUsed.toString();
+
+                await saveLocalHistory(tx.hash, receipt.blockNumber);
+                loadRecords();
+
+                showAlert('✅ Lưu thành công lên blockchain!', 'success');
+            } catch (error) {
+                showAlert(`❌ Lỗi: ${error.message}`, 'error');
+            }
+        }
+
+        async function saveLocalHistory(txHash, blockNumber) {
+            try {
+                const payload = {
+                    timestamp: currentDetectionData.timestamp,
+                    diseases: currentDetectionData.diseases,
+                    medications: currentDetectionData.medications,
+                    imagePath: currentDetectionData.image_path,
+                    imageHash: currentDetectionData.image_hash,
+                    advice: currentDetectionData.advice,
+                    tx_hash: txHash,
+                    block_number: blockNumber
+                };
+
+                await fetch(`${API_URL}/api/history/save-local`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch (error) {
+                console.error('Lỗi lưu local history:', error);
+            }
+        }
+
+        async function loadBlockchainInfo() {
+            try {
+                if (!provider || !userAccount) return;
+                const balance = await provider.getBalance(userAccount);
+                const balanceInEth = ethers.formatEther(balance);
+                document.getElementById('blockchainInfo').innerHTML = 
+                    `<div class="info-box"><div class="info-label">💰 Account Balance</div><div class="info-value" style="font-size: 1rem;">${parseFloat(balanceInEth).toFixed(4)} ETH</div></div>`;
+            } catch (error) {
+                console.error('Lỗi tải blockchain info:', error);
+            }
+        }
+
+        async function loadRecords() {
+            try {
+                const response = await fetch(`${API_URL}/api/history/get`);
+                const result = await response.json();
+
+                if (!result.records || result.records.length === 0) {
+                    document.getElementById('recordsContainer').innerHTML = '<p style="text-align: center; color: var(--gray-500);">Chưa có lịch sử</p>';
+                    return;
+                }
+
+                document.getElementById('recordsContainer').innerHTML = result.records.slice(-3)
+                    .map(record => {
+                        const diseaseText = record.diseases ? record.diseases.join(', ') : 'N/A';
+                        return `
+                            <div class="record-card">
+                                <div class="record-image">${record.image_path ? `<img src="${record.image_path}">` : '📸'}</div>
+                                <div class="record-info">
+                                    <div class="record-disease">${diseaseText}</div>
+                                    <div class="record-meta">
+                                        <span>⏰ ${record.time || 'N/A'}</span>
+                                        ${record.tx_hash ? '<span class="record-badge">✅ Blockchain</span>' : ''}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+            } catch (error) {
+                console.error('Lỗi tải records:', error);
+            }
+        }
+
+        function openHistoryModal() {
+            document.getElementById('historyModal').classList.add('active');
+            loadHistoryDetails();
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').classList.remove('active');
+        }
+
+        async function loadHistoryDetails() {
+            try {
+                const historyResponse = await fetch(`${API_URL}/api/history/get`);
+                const historyResult = await historyResponse.json();
+                const blockchainResponse = await fetch(`${API_URL}/api/blockchain/account`);
+                const blockchainData = await blockchainResponse.json();
+
+                document.getElementById('localCount').textContent = historyResult.records ? historyResult.records.length : 0;
+                document.getElementById('blockchainCount').textContent = historyResult.records ? historyResult.records.filter(r => r.tx_hash).length : 0;
+                if (blockchainData.balance) document.getElementById('accountBalance').textContent = parseFloat(blockchainData.balance).toFixed(2);
+
+                if (!historyResult.records || historyResult.records.length === 0) {
+                    document.getElementById('historyDetailContainer').innerHTML = '<p style="text-align: center; color: var(--gray-500);">Chưa có lịch sử</p>';
+                    return;
+                }
+
+                document.getElementById('historyDetailContainer').innerHTML = historyResult.records
+                    .map(record => {
+                        const diseaseText = record.diseases ? record.diseases.join(', ') : 'N/A';
+                        const medicationText = record.medications && record.medications.length > 0 ? record.medications.slice(0, 2).join(', ') + (record.medications.length > 2 ? '...' : '') : 'N/A';
+                        return `
+                            <div class="record-card" style="grid-template-columns: auto 1fr; gap: 1.5rem; background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1.5rem;">
+                                <div class="record-image" style="width: 120px; height: 120px; font-size: 3rem;">${record.image_path ? `<img src="${record.image_path}">` : '📸'}</div>
+                                <div>
+                                    <h3 style="margin-bottom: 0.75rem; font-weight: 600;">🚨 ${diseaseText}</h3>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                        <div><span style="color: var(--gray-500); font-size: 0.875rem;">⏰ Thời gian</span><div style="font-weight: 600;">${record.time || 'N/A'}</div></div>
+                                        <div><span style="color: var(--gray-500); font-size: 0.875rem;">💊 Thuốc</span><div style="font-weight: 600;">${medicationText}</div></div>
+                                    </div>
+                                    ${record.tx_hash ? `
+                                        <div style="background: var(--success-light); padding: 1rem; border-radius: 0.375rem; border-left: 3px solid var(--success);">
+                                            <p style="color: var(--gray-700); font-size: 0.875rem; margin: 0 0 0.5rem 0;">✅ Blockchain Confirmed</p>
+                                            <p style="font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--gray-900); margin: 0;">TX: ${record.tx_hash.substring(0, 16)}...</p>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+            } catch (error) {
+                console.error('Lỗi tải history details:', error);
+            }
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type} active`;
+
+            if (type === 'success') {
+                setTimeout(() => alert.classList.remove('active'), 4000);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadRecords();
+        });
+    </script>
+</body>
+</html>

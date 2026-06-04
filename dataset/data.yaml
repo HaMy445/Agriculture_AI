@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['Bacterial Leaf Blight', 'Brown Spot', 'Healthy Leaf', 'Leaf Blast Disease', 'Sheath Blight']
+
+roboflow:
+  workspace: minhs-workspace-pd929
+  project: rice-leaf-disease-vzawu-g3vlf
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/minhs-workspace-pd929/rice-leaf-disease-vzawu-g3vlf/dataset/1

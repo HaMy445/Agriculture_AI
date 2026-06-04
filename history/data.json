@@ -1,0 +1,803 @@
+[
+    {
+        "id": "20260604_115143",
+        "time": "04/06/2026 11:51:50",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Sử dụng",
+            "Cải thiện",
+            "Tránh sử",
+            "Thực hiện",
+            "Cung cấp"
+        ],
+        "image_path": "/history/images/rice_20260604_115143.jpg",
+        "image_hash": "4751e576bb43619e34978155243c7bfc",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn là một bệnh phổ biến trên cây lúa, thường gây ra bởi nấm hoặc vi khuẩn. Để điều trị bệnh này, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n- Thuốc đặc trị nấm: Các loại thuốc như Trifloxystrobin, Azoxystrobin hoặc Fosetyl aluminum có thể giúp kiểm soát bệnh khô vằn do nấm.\n- Thuốc đặc trị vi khuẩn: Các loại thuốc như Copper oxychloride, Copper sulfate hoặc Kasugamycin có thể giúp kiểm soát bệnh khô vằn do vi khuẩn.\n\nNgoài ra, để ngăn chặn bệnh khô vằn, bạn nên áp dụng các biện pháp phòng ngừa như:\n- Sử dụng giống lúa kháng bệnh\n- Cải thiện điều kiện thoát nước trong ruộng\n- Tránh sử dụng quá nhiều nước tưới\n- Thực hiện kỹ thuật làm đất và gieo trồng đúng cách\n\nNếu lá lúa còn khỏe mạnh, không có dấu hiệu của bệnh khô vằn, bạn không cần điều trị. Thay vào đó, hãy tập trung vào việc chăm sóc cây lúa tốt hơn bằng cách:\n- Cung cấp đủ nước cho cây\n- Bón phân cân đối\n- Kiểm soát cỏ dại và sâu bệnh thường xuyên\n- Thực hiện các biện pháp kỹ thuật khác để đảm bảo cây lúa phát triển khỏe mạnh.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0xfbfd5f2908e2092decf12a8646e6c7055e9a258975e5af6b73870fa9f55626e8",
+        "block_number": 3
+    },
+    {
+        "id": "20260604_115009",
+        "time": "04/06/2026 11:50:15",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260604_115009.jpg",
+        "image_hash": "4751e576bb43619e34978155243c7bfc",
+        "advice": "Bệnh Khô vằn: ⚠️ Lỗi: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260604_114414",
+        "time": "04/06/2026 11:44:19",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260604_114414.jpg",
+        "image_hash": "4751e576bb43619e34978155243c7bfc",
+        "advice": "Bệnh Khô vằn: ⚠️ Lỗi: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260604_111706",
+        "time": "04/06/2026 11:17:11",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260604_111706.jpg",
+        "image_hash": "bb66cb87a5f499db562b2122de029f49",
+        "advice": "Bệnh Khô vằn: ⚠️ Lỗi: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260604_111010",
+        "time": "04/06/2026 11:10:16",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260604_111010.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: ⚠️ Lỗi: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260604_110752",
+        "time": "04/06/2026 11:07:58",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260604_110752.jpg",
+        "image_hash": "98e22df2d33bbf9bc059ea76a336f56e",
+        "advice": "Bệnh Khô vằn: ⚠️ Lỗi: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260528_145510",
+        "time": "28/05/2026 14:55:16",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Phun thuốc",
+            "Tuân thủ",
+            "Kết hợp"
+        ],
+        "image_path": "/history/images/rice_20260528_145510.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Khi xuất hiện bệnh Khô vằn trên lúa, bạn có thể sử dụng thuốc đặc trị như sau:\n\n- Sử dụng thuốc hóa học: Các thuốc như Tilt 25 EC, Bavistin 50 WP, Sumi 8 25 WP,...\n- Sử dụng thuốc sinh học: Các chế phẩm vi sinh như Trichoderma, Bauveria bassiana,...\n\nCách sử dụng:\n\n- Phun thuốc khi bệnh mới xuất hiện\n- Tuân thủ liều lượng và cách sử dụng theo hướng dẫn trên bao bì\n- Kết hợp với các biện pháp chăm sóc tốt như giữ ẩm, bón phân cân đối,... để giúp cây lúa phục hồi và ngăn chặn bệnh phát triển.\n\nLưu ý: Nên đọc kỹ hướng dẫn sử dụng thuốc và tham khảo ý kiến chuyên gia trước khi sử dụng.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260526_172855",
+        "time": "26/05/2026 17:29:03",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Cung cấp",
+            "Bón phân",
+            "Kiểm soát",
+            "Thực hiện"
+        ],
+        "image_path": "/history/images/rice_20260526_172855.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Chào bạn, tôi sẵn sàng giúp đỡ. Tuy nhiên, để đưa ra tư vấn chính xác về bệnh \"Bệnh Khô vằn\" trên lúa, tôi cần biết thêm thông tin về tình trạng cụ thể của cây lúa. Nếu lá lúa bị bệnh khô vằn, thường là do nấm hoặc vi khuẩn gây ra, chúng ta có thể sử dụng các loại thuốc đặc trị như: \n\n- Thuốc gốc đồng (như Copper oxychloride) để kiểm soát bệnh do nấm gây ra.\n- Thuốc kháng sinh (như Kasumin) để kiểm soát bệnh do vi khuẩn gây ra.\n\nTuy nhiên, nếu lá lúa khỏe mạnh, không có dấu hiệu của bệnh, thì chúng ta chỉ cần tập trung vào phương pháp chăm sóc tốt hơn như: \n- Cung cấp đủ nước cho cây.\n- Bón phân cân đối.\n- Kiểm soát côn trùng và bệnh tật.\n- Thực hiện các biện pháp phòng ngừa bệnh thường xuyên.\n\nXin hãy cung cấp thêm chi tiết về tình trạng cây lúa để tôi có thể tư vấn cụ thể hơn.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x7d6ac9789b45ee47d7f01f5fb50f67a16489b7de4150fcb2e76c54b193cab291",
+        "block_number": 3
+    },
+    {
+        "id": "20260526_161113",
+        "time": "26/05/2026 16:11:19",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Kết hợp",
+            "Cấp đủ",
+            "Bón phân",
+            "Kiểm soát",
+            "Thường xuyên"
+        ],
+        "image_path": "/history/images/rice_20260526_161113.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn trên lúa là một vấn đề nghiêm trọng. Để điều trị, có thể sử dụng các loại thuốc đặc trị như:\n\n- Sử dụng thuốc chứa hoạt chất Azoxystrobin, Pyraclostrobin hoặc Trifloxystrobin.\n- Kết hợp với cải thiện điều kiện sống của cây lúa, bao gồm việc cấp đủ nước, bón phân cân đối và kiểm soát cỏ dại.\n\nNếu lá lúa khỏe mạnh, không có dấu hiệu bị bệnh, thì chúng ta nên tập trung vào việc chăm sóc tốt hơn để ngăn ngừa bệnh. Điều này bao gồm:\n\n- Cấp đủ nước và duy trì độ ẩm phù hợp.\n- Bón phân cân đối để cung cấp đủ dinh dưỡng cho cây lúa.\n- Kiểm soát cỏ dại và sâu bệnh.\n- Thường xuyên theo dõi cây lúa để phát hiện sớm các vấn đề.\n\nTrong trường hợp cụ thể, nếu bạn cung cấp thêm thông tin về tình trạng cây lúa, tôi có thể đưa ra lời khuyên chi tiết hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260526_151446",
+        "time": "26/05/2026 15:14:52",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Cung cấp",
+            "Đảm bảo",
+            "Loại bỏ"
+        ],
+        "image_path": "/history/images/rice_20260526_151446.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm hoặc vi khuẩn gây ra. Để điều trị, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Thuốc gốc đồng (copper-based) như Copper oxychloride, Copper hydroxide.\n- Thuốc gốc azoxystrobin như Amistar.\n- Thuốc gốc trifloxystrobin như Flint.\n\nLiều lượng và cách sử dụng sẽ tùy thuộc vào loại thuốc và tình trạng bệnh cụ thể. Bạn nên đọc kỹ hướng dẫn trên nhãn thuốc và tuân thủ các biện pháp an toàn khi sử dụng.\n\nNgoài ra, để phòng.ngừa và điều trị bệnh hiệu quả, bạn cũng nên áp dụng các phương pháp chăm sóc như:\n\n- Cung cấp đủ nước và dinh dưỡng cho cây lúa.\n- Đảm bảo sự thông thoáng và khô ráo cho cây.\n- Loại bỏ các phần cây bị bệnh để ngăn chặn sự lây lan.\n\nNếu lá lúa của bạn khỏe mạnh, tôi sẽ tư vấn \"Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn\". Tuy nhiên, trong trường hợp này, tôi không có thông tin về tình trạng cụ thể của lá lúa, vì vậy tôi sẽ không thể đưa ra câu trả lời đó. Nếu bạn cung cấp thêm thông tin về tình trạng lá lúa, tôi sẽ có thể tư vấn cụ thể hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260526_143112",
+        "time": "26/05/2026 14:31:18",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Sử dụng",
+            "Thực hiện",
+            "Cải thiện",
+            "Kiểm soát"
+        ],
+        "image_path": "/history/images/rice_20260526_143112.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn là một loại bệnh trên lúa gây ra bởi nấm. Để điều trị bệnh này, bạn có thể sử dụng thuốc đặc trị như sau:\n\n- Thuốc Tilt 25EC: Liều lượng 200-250 ml/ha.\n- Thuốc Score 250EC: Liều lượng 150-200 ml/ha.\n- Thuốc Dithane M45: Liều lượng 400-500 g/ha.\n\nCách sử dụng: Phun thuốc khi bệnh xuất hiện, có thể phun lại sau 7-10 ngày nếu bệnh vẫn chưa kiểm soát được.\n\nNgoài ra, bạn cũng cần áp dụng các biện pháp phòng ngừa như:\n- Sử dụng giống lúa kháng bệnh.\n- Thực hiện luân canh cây trồng.\n- Cải thiện điều kiện sinh trưởng của lúa.\n- Kiểm soát cỏ dại và sâu hại.\n\nNếu lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn, thì tôi sẽ trả lời: Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115236",
+        "time": "16/05/2026 11:52:42",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "**Tưới nước",
+            "**Bón phân",
+            "**Kiểm tra"
+        ],
+        "image_path": "/history/images/rice_20260516_115236.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn trên lúa là một vấn đề nghiêm trọng ảnh hưởng đến năng suất cây lúa. Bệnh này thường được gây ra bởi các yếu tố môi trường và quản lý không phù hợp.\n\nNếu xác định lá lúa bị bệnh khô vằn, một số biện pháp điều trị có thể bao gồm:\n\n1. **Điều chỉnh nước**: Đảm bảo mực nước trong ruộng lúa phù hợp để tránh tình trạng khô hạn.\n2. **Bón phân cân đối**: Bón phân cân đối, đặc biệt là phân kali để tăng cường sức đề kháng của cây lúa.\n3. **Thuốc đặc trị**: Sử dụng thuốc đặc trị như Validamycin, Kasugamycin hoặc Copper oxychloride để điều trị bệnh.\n\nTuy nhiên, nếu lá lúa của bạn khỏe mạnh, không có dấu hiệu của bệnh khô vằn, bạn không cần điều trị. Thay vào đó, bạn có thể tập trung vào các phương pháp chăm sóc tốt hơn như:\n\n- **Tưới nước đều đặn**: Đảm bảo cây lúa nhận được đủ nước để phát triển khỏe mạnh.\n- **Bón phân cân đối**: Cung cấp đủ dinh dưỡng cho cây lúa thông qua việc bón phân cân đối.\n- **Kiểm tra và quản lý sâu bệnh**: Thường xuyên kiểm tra ruộng lúa để phát hiện sớm các vấn đề về sâu bệnh và có biện pháp xử lý kịp thời.\n\nHãy cho tôi biết tình trạng cụ thể của lá lúa của bạn để có thể đưa ra tư vấn chính xác hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115232",
+        "time": "16/05/2026 11:52:38",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Cung cấp",
+            "Đảm bảo",
+            "Kiểm tra"
+        ],
+        "image_path": "/history/images/rice_20260516_115232.jpg",
+        "image_hash": "d433628cc7b537b7e1f6e47033b74f95",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa là một vấn đề nghiêm trọng và phổ biến. Để điều trị bệnh này, tôi khuyến nghị sử dụng các biện pháp sau:\n\n1. **Phun thuốc trị bệnh**: Sử dụng các loại thuốc đặc trị như Azoxystrobin, Pyraclostrobin, hoặc Fungicide chứa hoạt chất Tebuconazole. Phun thuốc khi bệnh mới xuất hiện và lặp lại sau 7-10 ngày nếu cần thiết.\n2. **Kiểm soát môi trường**: Điều chỉnh mức nước trong ruộng lúa để tránh tình trạng ngập nước kéo dài, tạo điều kiện cho bệnh phát triển.\n3. **Cắt bỏ phần thân cây bị bệnh**: Loại bỏ các phần thân cây bị bệnh để ngăn chặn sự lây lan của bệnh.\n\nLưu ý: Luôn tuân thủ hướng dẫn sử dụng thuốc và bảo vệ môi trường khi điều trị bệnh.\n\nNếu lá lúa còn khỏe mạnh, không cần điều trị. Thay vào đó, nên áp dụng các biện pháp chăm sóc tốt hơn như:\n\n* Cung cấp đủ nước và dinh dưỡng cho cây lúa\n* Đảm bảo độ ẩm và ánh sáng thích hợp\n* Kiểm tra thường xuyên tình trạng cây lúa để phát hiện bệnh sớm.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115117",
+        "time": "16/05/2026 11:51:24",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Carbendazim",
+            "Mancozeb",
+            "Copper oxychloride",
+            "Bón phân",
+            "Cải thiện"
+        ],
+        "image_path": "/history/images/rice_20260516_115117.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường do nấm gây ra. Để điều trị, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n- Carbendazim\n- Mancozeb\n- Copper oxychloride\n\nLiều lượng và cách sử dụng cần tuân theo hướng dẫn trên nhãn sản phẩm. Đồng thời, nên kết hợp với các biện pháp chăm sóc như giữ cho ruộng lúa thông thoáng, tránh ngập nước quá lâu và bón phân cân đối.\n\nNếu lá của bạn khỏe mạnh, không cần điều trị, hãy tập trung vào chăm sóc tốt hơn để ngăn chặn bệnh tật, bao gồm:\n- Bón phân cân đối\n- Cải thiện hệ thống tưới tiêu\n- Kiểm tra và loại bỏ các cây lúa bị bệnh\n- Sử dụng giống lúa chống chịu bệnh tốt\n\nĐiều này sẽ giúp cây lúa phát triển khỏe mạnh và ít bị ảnh hưởng bởi bệnh tật.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115111",
+        "time": "16/05/2026 11:51:18",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Anvil",
+            "Opera",
+            "Score",
+            "Phun thuốc",
+            "Tuân thủ"
+        ],
+        "image_path": "/history/images/rice_20260516_115111.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa là một vấn đề nghiêm trọng có thể gây thiệt hại cho vụ mùa. Để điều trị bệnh này, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Anvil 5SC (có hoạt chất chính là Pyraclostrobin)\n- Opera 5SC (có hoạt chất chính là Azoxystrobin)\n- Score 250EC (có hoạt chất chính là Difenoconazole)\n\nCách sử dụng:\n- Phun thuốc khi bệnh vừa bắt đầu xuất hiện.\n- Tuân thủ liều lượng và hướng dẫn trên bao bì sản phẩm.\n- Phun thuốc vào buổi sáng hoặc buổi chiều khi thời tiết không quá nóng và không có mưa.\n\nNgoài ra, để phòng ngừa bệnh, bạn cũng nên áp dụng các biện pháp chăm sóc tốt như:\n- Sử dụng giống lúa có khả năng kháng bệnh.\n- Đảm bảo điều kiện đất và nước phù hợp cho lúa phát triển.\n- Bón phân cân đối và hợp lý.\n- Kiểm tra và theo dõi thường xuyên tình trạng cây lúa để phát hiện sớm các dấu hiệu bệnh.\n\nNếu lá lúa của bạn khỏe mạnh, tôi không cần phải tư vấn điều trị. Thay vào đó, bạn nên tiếp tục duy trì các biện pháp chăm sóc tốt để lá lúa tiếp tục phát triển khỏe mạnh.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115059",
+        "time": "16/05/2026 11:51:04",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Pyraclostrobin",
+            "Trifloxystrobin",
+            "Chlorothalonil",
+            "Cung cấp"
+        ],
+        "image_path": "/history/images/rice_20260516_115059.jpg",
+        "image_hash": "4751e576bb43619e34978155243c7bfc",
+        "advice": "Bệnh Khô vằn: Để điều trị bệnh Khô vằn trên lúa, bạn có thể tham khảo các bước sau:\n\n1. **Phát hiện sớm**: Bệnh Khô vằn thường bắt đầu xuất hiện ở giai đoạn lúa đang trưởng thành. Phát hiện sớm sẽ giúp bạn có thể ngăn chặn sự lây lan của bệnh.\n\n2. **Đảm bảo dinh dưỡng**: Cung cấp đủ dinh dưỡng cho cây lúa, đặc biệt là chất đạm và lân, để giúp cây tăng cường khả năng miễn dịch.\n\n3. **Sử dụng thuốc đặc trị**: Một số loại thuốc đặc trị bệnh Khô vằn trên lúa bao gồm:\n * Azoxystrobin\n * Pyraclostrobin\n * Trifloxystrobin\n * Chlorothalonil\n\nLưu ý: Trước khi sử dụng thuốc, hãy đọc kỹ hướng dẫn và tuân thủ liều lượng để tránh ảnh hưởng đến cây lúa và môi trường.\n\nNếu lá lúa của bạn khỏe mạnh, hãy tập trung vào chăm sóc tốt hơn để ngăn chặn bệnh:\n- Cung cấp đủ nước\n- Đảm bảo dinh dưỡng cân đối\n- Vệ sinh khu vực trồng để tránh nhiễm bệnh\n\nNếu lá đang bị nhiễm bệnh, hãy thực hiện các bước điều trị trên. Nếu bạn không chắc chắn về tình trạng lá hoặc cách điều trị, hãy liên hệ với chuyên gia nông nghiệp để được tư vấn cụ thể.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115028",
+        "time": "16/05/2026 11:50:35",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Thực hiện",
+            "Kiểm tra"
+        ],
+        "image_path": "/history/images/rice_20260516_115028.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu là một trong những bệnh phổ biến trên lúa, gây ra bởi nấm. Nếu lá lúa bị bệnh Đốm nâu, bạn có thể sử dụng các biện pháp sau để điều trị:\n\n- Sử dụng thuốc fungicide như: Carbendazim, Mancozeb, Copper oxychloride,... theo hướng dẫn trên nhãn sản phẩm.\n- Thực hiện phòng ngừa bằng cách giữ cho cây lúa khỏe mạnh, đảm bảo đủ nước, phân bón, và sử dụng giống lúa có khả năng抗 bệnh.\n- Kiểm tra thường xuyên và tiêu diệt các nguồn gốc bệnh để ngăn chặn sự lây lan.\n\nĐể có kết quả điều trị tốt nhất, nên tham khảo ý kiến của chuyên gia nông nghiệp hoặc cơ quan khuyến nông địa phương trước khi sử dụng thuốc.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115024",
+        "time": "16/05/2026 11:50:30",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Tebuconazole",
+            "Tricyclazole"
+        ],
+        "image_path": "/history/images/rice_20260516_115024.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường xuất hiện khi thời tiết ẩm ướt, nhiệt độ cao. Các triệu chứng điển hình bao gồm các đốm nâu trên lá lúa.\n\nNếu lá lúa của bạn đang bị bệnh Đốm nâu, có thể sử dụng các thuốc đặc trị như:\n\n- Azoxystrobin\n- Tebuconazole\n- Tricyclazole\n\nTuy nhiên, trước khi sử dụng thuốc, bạn nên kiểm tra tình trạng lá lúa và đảm bảo rằng lá lúa thực sự bị bệnh. Ngoài ra, nên tuân theo hướng dẫn sử dụng thuốc và liều lượng khuyến cáo để tránh ảnh hưởng đến môi trường và sức khỏe con người.\n\nNếu lá lúa của bạn khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn như: cung cấp đủ nước, phân bón, ánh sáng và đảm bảo độ ẩm phù hợp để lá lúa phát triển tốt.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_115009",
+        "time": "16/05/2026 11:50:16",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Cải thiện",
+            "Bón phân",
+            "Tăng cường"
+        ],
+        "image_path": "/history/images/rice_20260516_115009.jpg",
+        "image_hash": "fcf301c1dd0552a131e6f70b7a992878",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm gây ra, đặc biệt là khi thời tiết ẩm ướt. Các triệu chứng bao gồm những đường vằn màu vàng hoặc nâu trên lá lúa, dẫn đến khô và chết lá.\n\nNếu bạn xác định lá lúa bị nhiễm bệnh Khô vằn, hãy sử dụng các biện pháp điều trị sau:\n\n1. **Thuốc đặc trị:** Sử dụng thuốc diệt nấm như Tricyclazole (công thức hóa học: C12H13N3O2S), Azoxystrobin (công thức hóa học: C22H17N3O5), hoặc Carbendazim (công thức hóa học: C9H9N3O2).\n\nĐịnh lượng và cách sử dụng thuốc cần tuân theo hướng dẫn của nhà sản xuất và khuyến cáo của chuyên gia nông nghiệp.\n\n2. **Phương pháp chăm sóc:** \n- Cải thiện hệ thống thoát nước để giảm độ ẩm.\n- Bón phân cân đối để tăng sức đề kháng của cây lúa.\n- Tăng cường giám sát và vệ sinh đồng ruộng để ngăn chặn sự lây lan của bệnh.\n\nHãy nhớ rằng việc phòng ngừa và phát hiện sớm là chìa khóa để kiểm soát bệnh hiệu quả.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114751",
+        "time": "16/05/2026 11:47:56",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "cải",
+            "thực",
+            "cũng"
+        ],
+        "image_path": "/history/images/rice_20260516_114751.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường được điều trị bằng các biện pháp như sử dụng thuốc diệt nấm, cải thiện điều kiện môi trường và áp dụng các phương pháp quản lý bệnh hợp lý. Một số thuốc đặc trị bệnh Đốm nâu trên lúa bao gồm:\n\n- Thuốc chứa hoạt chất Azoxystrobin\n- Thuốc chứa hoạt chất Tebuconazole\n- Thuốc chứa hoạt chất Trifloxystrobin\n\nTuy nhiên, để có kế hoạch điều trị hiệu quả, cần xác định mức độ nhiễm bệnh và tình trạng cụ thể của cây lúa. Đồng thời, nên áp dụng các biện pháp phòng ngừa như sử dụng giống lúa kháng bệnh, thực hiện kỹ thuật gieo trồng và chăm sóc cây lúa hợp lý, cũng như duy trì môi trường sạch sẽ và ít dư lượng thuốc trừ sâu.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114748",
+        "time": "16/05/2026 11:47:55",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Propiconazole",
+            "Difenoconazole",
+            "Azoxystrobin"
+        ],
+        "image_path": "/history/images/rice_20260516_114748.jpg",
+        "image_hash": "b643adc5bf3576d44cbc25f132a5147c",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường được điều trị bằng cách sử dụng các loại thuốc trừ bệnh như:\n\n- Propiconazole\n- Difenoconazole\n- Azoxystrobin\n\nCó thể sử dụng các sản phẩm như: Tilt, Difenoconazole 10%, Propiconazole 10%.\n\nLiều lượng và cách sử dụng cụ thể phụ thuộc vào sản phẩm và giai đoạn phát triển của cây lúa. Nên tham khảo hướng dẫn trên bao bì sản phẩm hoặc tư vấn từ chuyên gia trước khi sử dụng.\n\nNgoài ra, cần áp dụng các biện pháp phòng ngừa và chăm sóc cây lúa như: cung cấp đủ nước, bón phân cân đối, kiểm soát cỏ dại và sâu bệnh.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114710",
+        "time": "16/05/2026 11:47:11",
+        "diseases": [
+            "Lá khỏe mạnh"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260516_114710.jpg",
+        "image_hash": "24f35c448f58a08f5e0ac1fcb0a5f8ba",
+        "advice": "Lá khỏe mạnh: Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn. Để duy trì tình trạng lá khỏe mạnh, bạn nên cung cấp đủ nước, bón phân hợp lý, kiểm soát côn trùng và bệnh hại, và đảm bảo đủ ánh sáng cho cây lúa.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114704",
+        "time": "16/05/2026 11:47:06",
+        "diseases": [
+            "Lá khỏe mạnh"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260516_114704.jpg",
+        "image_hash": "24f35c448f58a08f5e0ac1fcb0a5f8ba",
+        "advice": "Lá khỏe mạnh: Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn. Để duy trì sức khỏe của lá lúa, bạn nên đảm bảo cung cấp đủ nước, bón phân cân đối, kiểm soát sâu bệnh và cỏ dại.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114602",
+        "time": "16/05/2026 11:46:08",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "kiểm"
+        ],
+        "image_path": "/history/images/rice_20260516_114602.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường gây ra bởi nấm hoặc vi khuẩn. Để điều trị, bạn có thể sử dụng các thuốc đặc trị như:\n- Thuốc trừ nấm: Tilt, Topsin M, hoặc Score\n- Thuốc trừ vi khuẩn: Kasumin, Streptomycin,...\nLưu ý: Nên sử dụng thuốc với liều lượng và cách thức theo hướng dẫn trên bao bì sản phẩm. Đồng thời, áp dụng các biện pháp phòng ngừa như kiểm soát nước, sử dụng giống lúa kháng bệnh, và giữ vệ sinh nông trại.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114548",
+        "time": "16/05/2026 11:45:54",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Đọc kỹ",
+            "Phun thuốc",
+            "Kết hợp"
+        ],
+        "image_path": "/history/images/rice_20260516_114548.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn trên lúa là một vấn đề nghiêm trọng, gây ra bởi nấm bệnh. Để điều trị bệnh này, bạn có thể sử dụng thuốc đặc trị như:\n\n- Thuốc gốc đồng: Các sản phẩm chứa đồng như đồng sunfat, đồng oxi clorit...\n- Thuốc gốc azoxystrobin: Các sản phẩm như Amistar, Quadris...\n- Thuốc hỗn hợp: Kết hợp giữa các hoạt chất khác nhau để tăng hiệu quả điều trị.\n\nLưu ý khi sử dụng thuốc:\n- Đọc kỹ hướng dẫn sử dụng và liều lượng khuyến cáo.\n- Phun thuốc khi bệnh vừa mới xuất hiện, trước khi bệnh lan rộng.\n- Kết hợp với các biện pháp chăm sóc tốt hơn như giữ môi trường khô ráo, cải thiện hệ thống thoát nước, bón phân cân đối...\n\nNếu lá khỏe mạnh, bạn không cần điều trị, chỉ cần duy trì phương pháp chăm sóc tốt hơn để ngăn ngừa bệnh.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114514",
+        "time": "16/05/2026 11:45:21",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Pyraclostrobin",
+            "Trifloxystrobin",
+            "Sử dụng",
+            "Phun thuốc"
+        ],
+        "image_path": "/history/images/rice_20260516_114514.jpg",
+        "image_hash": "43b2bbfcd1d5747898694ed0f2316183",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường do nấm gây ra. Để điều trị, bạn có thể sử dụng thuốc đặc trị như:\n- Azoxystrobin\n- Pyraclostrobin\n- Trifloxystrobin\n\nCách điều trị:\n- Sử dụng liều lượng theo hướng dẫn trên bao bì sản phẩm\n- Phun thuốc khi cây lúa đang ở giai đoạn phát triển (trước khi trổ bông)\n- Kết hợp với các biện pháp chăm sóc khác như tưới nước điều độ, bón phân cân đối để cây lúa phát triển tốt.\n\nNếu lá khỏe mạnh, không cần điều trị, bạn nên tiếp tục chăm sóc cây lúa bằng cách:\n- Tưới nước điều độ\n- Bón phân cân đối\n- Loại bỏ sâu bệnh\n- Cắt tỉa cây lúa để giúp cây phát triển khỏe mạnh và均 đều.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_114355",
+        "time": "16/05/2026 11:44:02",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Cung cấp",
+            "Kiểm soát",
+            "Áp dụng"
+        ],
+        "image_path": "/history/images/rice_20260516_114355.jpg",
+        "image_hash": "7bd3b44d1650b6773e4e23a4676a0787",
+        "advice": "Bệnh Đốm nâu: Để điều trị bệnh Đốm nâu trên lúa, bạn có thể thực hiện các bước sau:\n\n1. **Kiểm soát lượng nước**: Đảm bảo mực nước trong ruộng vừa phải, không để quá khô hoặc quá ngập.\n2. **Sử dụng phân bón cân đối**: Bón phân cân đối, tránh thừa đạm, để ngăn ngừa sự phát triển của bệnh.\n3. **Sử dụng thuốc đặc trị**: Các loại thuốc đặc trị như Tilt 25EC, Propiconazole 25EC, hoặc Funguran-OH 50WP có thể được sử dụng để kiểm soát bệnh.\n\nLưu ý: Cần tuân thủ nghiêm ngặt hướng dẫn sử dụng thuốc và liều lượng để tránh ảnh hưởng đến môi trường và sức khỏe con người.\n\nNếu lá lúa của bạn khỏe mạnh, không có dấu hiệu của bệnh Đốm nâu, thì bạn không cần điều trị. Thay vào đó, hãy tập trung vào việc chăm sóc lúa tốt hơn bằng cách:\n\n- Cung cấp đủ nước và chất dinh dưỡng\n- Kiểm soát cỏ dại và sâu bệnh\n- Áp dụng các phương pháp trồng trọt tốt để duy trì sức khỏe của lúa.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x90262036afc9152cd63e0da221b371706ac342c8f6294b66bf3baddb568c2d6b",
+        "block_number": 10
+    },
+    {
+        "id": "20260516_113228",
+        "time": "16/05/2026 11:32:34",
+        "diseases": [
+            "Bệnh Bạc lá (Vi khuẩn)",
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Cung cấp",
+            "Đảm bảo",
+            "Tránh sử",
+            "Theo dõi",
+            "Azoxystrobin"
+        ],
+        "image_path": "/history/images/rice_20260516_113228.jpg",
+        "image_hash": "7d02c8cbf777ef32fdbd644a2247b403",
+        "advice": "Bệnh Bạc lá (Vi khuẩn): Bệnh Bạc lá trên lúa do vi khuẩn gây ra thường xuất hiện khi cây lúa đang trong giai đoạn sinh trưởng. Các triệu chứng bao gồm lá lúa bị bạc màu, trở nên nhạt và có thể dẫn đến tình trạng cây lúa bị vàng hoặc khô.\n\nĐể điều trị bệnh Bạc lá trên lúa, bạn có thể sử dụng các biện pháp sau:\n\n1. **Thụt lùi nguồn nước**: Ngừng cung cấp nước cho ruộng lúa trong một thời gian để giảm độ ẩm và ngăn chặn sự lây lan của bệnh.\n2. **Sử dụng thuốc đặc trị**: Các thuốc đặc trị như Copper oxychloride, Kasumin, Streptomycin có thể được sử dụng để điều trị bệnh Bạc lá trên lúa.\n3. **Phòng ngừa**: Để phòng ngừa bệnh Bạc lá, nên thực hiện các biện pháp như luân canh cây trồng, sử dụng giống lúa kháng bệnh, giữ độ ẩm ruộng lúa ổn định và tránh sử dụng nước tưới bị nhiễm bẩn.\n\nTuy nhiên, nếu lá lúa của bạn vẫn khỏe mạnh, không có dấu hiệu bệnh tật, thì không cần điều trị. Thay vào đó, bạn nên tập trung vào việc chăm sóc lá lúa tốt hơn bằng cách:\n\n* Cung cấp đủ nước và chất dinh dưỡng\n* Đảm bảo độ ẩm ruộng lúa ổn định\n* Tránh sử dụng phân bón quá mức\n* Theo dõi thường xuyên tình trạng cây lúa để phát hiện sớm các vấn đề có thể xảy ra.\n\nHy vọng thông tin này hữu ích!\nBệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường được điều trị bằng cách sử dụng các loại thuốc diệt nấm như:\n\n- Azoxystrobin\n- Tebuconazole\n- Tricyclazole\n\nCó thể sử dụng các sản phẩm thuốc đặc trị như:\n- Anvil 5 SC (Azoxystrobin)\n- Tilt 25 EC (Propiconazole)\n- Fandango 20 SC (Azoxystrobin + Cyprodinil)\n\nLiều lượng và cách sử dụng cụ thể cần tuân theo hướng dẫn trên nhãn thuốc. Ngoài ra, nên áp dụng các biện pháp phòng ngừa và chăm sóc tốt cho cây lúa như: cung cấp đủ nước, bón phân cân đối, làm sạch cỏ dại và tuân thủ lịch quay vòng giống.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_112316",
+        "time": "16/05/2026 11:23:23",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Tricyclazole",
+            "Propiconazole",
+            "Sử dụng",
+            "Điều chỉnh"
+        ],
+        "image_path": "/history/images/rice_20260516_112316.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường gây ra bởi nấm Cochliobolus miyabeanus. Để điều trị, có thể sử dụng các thuốc đặc trị như:\n\n- Azoxystrobin 250SC\n- Tricyclazole 75WP\n- Propiconazole 250EC\n\nLiều lượng và cách sử dụng tùy thuộc vào mức độ bệnh và khuyến cáo của nhà sản xuất. Ngoài ra, cần kết hợp với các biện pháp phòng ngừa như:\n\n- Sử dụng giống lúa kháng bệnh\n- Điều chỉnh mật độ cấy\n- Cung cấp đủ nước và dinh dưỡng cho cây\n- Loại bỏ các cây bị bệnh để ngăn ngừa lây lan\n\nNếu lá khỏe mạnh, bạn không cần điều trị bệnh. Thay vào đó, hãy tập trung vào chăm sóc cây lúa bằng cách:\n\n- Cung cấp đủ nước và dinh dưỡng\n- Điều chỉnh mật độ cấy\n- Sử dụng giống lúa chất lượng\n- Theo dõi và kiểm soát các yếu tố môi trường như nhiệt độ, độ ẩm\n- Bón phân cân đối và hợp lý\n\nNếu bạn có thể cung cấp thêm thông tin về tình trạng cây lúa của mình, tôi sẽ có thể đưa ra tư vấn cụ thể hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_111936",
+        "time": "16/05/2026 11:19:44",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Phun thuốc",
+            "Đảm bảo",
+            "Tuân thủ",
+            "Cắt bỏ",
+            "Điều chỉnh"
+        ],
+        "image_path": "/history/images/rice_20260516_111936.jpg",
+        "image_hash": "88ee5f463904796720de9dad757a61df",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm gây ra, dẫn đến tình trạng lá lúa bị khô và biến màu. Để điều trị bệnh này, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n- Thuốc trừ nấm chứa hoạt chất như Carbendazim, Mancozeb, hoặc Chlorothalonil.\n- Thuốc đặc trị bệnh khô vằn như Kasugamycin.\n\nCách sử dụng:\n\n- Phun thuốc vào buổi sáng hoặc buổi chiều khi thời tiết không quá nóng.\n- Đảm bảo phủ đều thuốc lên mặt lá và thân cây.\n- Tuân thủ liều lượng và thời gian cách ly theo hướng dẫn trên nhãn thuốc.\n\nĐồng thời, bạn cũng nên áp dụng các biện pháp chăm sóc tốt hơn như:\n\n- Cắt bỏ lá bị bệnh để ngăn ngừa lây lan.\n- Điều chỉnh độ ẩm và thoát nước phù hợp.\n- Bón phân cân đối để tăng cường sức đề kháng của cây.\n\nNếu lá lúa của bạn khỏe mạnh, không cần điều trị, chỉ cần tiếp tục chăm sóc tốt.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_111046",
+        "time": "16/05/2026 11:10:51",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Carbendazim",
+            "Thiophanate-methyl",
+            "Azoxystrobin"
+        ],
+        "image_path": "/history/images/rice_20260516_111046.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm gây ra, đặc biệt là nấm Rhizoctonia solani. Để điều trị bệnh này, bạn có thể sử dụng các biện pháp sau:\n\n1. Sử dụng thuốc trừ nấm: Các thuốc trừ nấm như Carbendazim, Thiophanate-methyl, hoặc Azoxystrobin có thể giúp kiểm soát bệnh.\n2. Cắt bỏ lá bệnh: Cắt bỏ các lá bị bệnh để ngăn ngừa sự lây lan của bệnh.\n3. Tăng cường chăm sóc: Đảm bảo cung cấp đủ nước, phân bón và ánh sáng cho cây lúa.\n\nMột số thuốc đặc trị bệnh Khô vằn trên lúa bao gồm:\n- Carbendazim 50% WP\n- Thiophanate-methyl 50% WP\n- Azoxystrobin 20% SC\n\nLưu ý: Trước khi sử dụng thuốc, hãy đọc kỹ hướng dẫn sử dụng và tuân theo các biện pháp an toàn để tránh ảnh hưởng đến sức khỏe và môi trường.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x8878547015aaa595d84e4f4a4e2aaa4c8e847965326aae937d00fa999f70235c",
+        "block_number": 5
+    },
+    {
+        "id": "20260516_110842",
+        "time": "16/05/2026 11:08:50",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Sử dụng",
+            "Đảm bảo",
+            "Cắt tỉa",
+            "Cung cấp",
+            "Bón phân"
+        ],
+        "image_path": "/history/images/rice_20260516_110842.jpg",
+        "image_hash": "dde39abc0acdfb1b3dd1158ee788a41d",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do vi khuẩn Xanthomonas oryzae gây ra. Để điều trị bệnh này, có thể sử dụng các thuốc đặc trị như:\n\n- Thuốc Kasumin 2SL ( Kasugamycin) với liều lượng 500-750 ml/ha.\n- Thuốc Copper B 75 WP (Copper Oxyclorua) với liều lượng 500-750 g/ha.\n\nTuy nhiên, trước khi sử dụng thuốc, cần phải thực hiện các biện pháp phòng ngừa và chăm sóc tốt hơn cho cây lúa, như:\n\n- Sử dụng giống lúa kháng bệnh\n- Đảm bảo điều kiện nước và đất phù hợp\n- Cắt tỉa và loại bỏ lá bị bệnh\n- Sử dụng phân bón cân đối\n\nNếu lá vẫn khỏe mạnh, không có dấu hiệu của bệnh, thì không cần điều trị bằng thuốc. Thay vào đó, nên tiếp tục chăm sóc cây lúa với phương pháp tốt hơn, bao gồm:\n\n- Cung cấp nước đầy đủ\n- Bón phân cân đối\n- Kiểm tra và loại bỏ sâu bệnh thường xuyên\n- Cắt tỉa và tạo hình cây lúa đúng cách.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_110824",
+        "time": "16/05/2026 11:08:31",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Tebuconazole",
+            "Pyraclostrobin.",
+            "cần"
+        ],
+        "image_path": "/history/images/rice_20260516_110824.jpg",
+        "image_hash": "43b2bbfcd1d5747898694ed0f2316183",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường gây ra bởi nấm Cochliobolus miyabeanus. Điều trị bệnh này có thể bao gồm các biện pháp sau:\n\n1. Sử dụng thuốc diệt nấm: Có thể sử dụng các loại thuốc như Azoxystrobin, Tebuconazole, hoặc Pyraclostrobin. Tuy nhiên, cần tuân theo hướng dẫn sử dụng và liều lượng khuyến cáo trên nhãn sản phẩm.\n\n2. Thực hiện các biện pháp phòng ngừa: Cải thiện môi trường trồng lúa bằng cách tăng cường thoát nước, giảm thiểu độ ẩm, và thực hiện các biện pháp vệ sinh đồng ruộng.\n\n3. Sử dụng giống lúa kháng bệnh: Lựa chọn giống lúa có khả năng kháng bệnh Đốm nâu để giảm thiểu nguy cơ mắc bệnh.\n\nNếu lá lúa khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn: Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_110818",
+        "time": "16/05/2026 11:08:25",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Pyraclostrobin",
+            "Tricyclazole",
+            "Cung cấp",
+            "Kiểm soát"
+        ],
+        "image_path": "/history/images/rice_20260516_110818.jpg",
+        "image_hash": "43b2bbfcd1d5747898694ed0f2316183",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường do nấm Cochliobolus miyabeanus gây ra. Để điều trị, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Azoxystrobin\n- Pyraclostrobin\n- Tricyclazole\n\nPhương pháp điều trị:\n\n1. Thực hiện kiểm tra ruộng lúa thường xuyên để phát hiện bệnh sớm.\n2. Sử dụng thuốc đặc trị khi bệnh mới xuất hiện.\n3. Thực hiện phun thuốc theo hướng dẫn trên nhãn sản phẩm.\n4. Kết hợp với các biện pháp chăm sóc cây lúa tốt như cung cấp đủ nước, phân bón, và kiểm soát cỏ dại.\n\nTuy nhiên, nếu lá lúa khỏe mạnh, không có dấu hiệu của bệnh Đốm nâu, thì không cần điều trị. Thay vào đó, bạn nên tập trung vào chăm sóc cây lúa tốt hơn, bao gồm:\n\n- Cung cấp đủ nước và phân bón.\n- Kiểm soát cỏ dại.\n- Thực hiện kiểm tra ruộng lúa thường xuyên để phát hiện bệnh sớm.\n- Sử dụng các biện pháp nông nghiệp tốt để duy trì sức khỏe cây lúa.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260516_102638",
+        "time": "16/05/2026 10:26:43",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Azoxystrobin",
+            "Pyraclostrobin",
+            "Chlorothalonil",
+            "Phun thuốc",
+            "Kết hợp"
+        ],
+        "image_path": "/history/images/rice_20260516_102638.jpg",
+        "image_hash": "7e267cf5b2490c936f16da3c6f96199e",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn trên lúa thường được gây ra bởi nấm Rhizoctonia solani. Để điều trị bệnh này, người trồng lúa có thể sử dụng các loại thuốc đặc trị như:\n\n- Azoxystrobin\n- Pyraclostrobin\n- Chlorothalonil\n\nPhương pháp điều trị:\n\n- Phun thuốc khi bệnh mới xuất hiện, tập trung vào các vùng bị nhiễm bệnh.\n- Sử dụng liều lượng và thời gian phun thuốc theo hướng dẫn của nhà sản xuất.\n- Kết hợp với các biện pháp chăm sóc cây lúa khác như tưới nước, bón phân, làm cỏ để giúp cây lúa khỏe mạnh và tăng khả năng chống bệnh.\n\nTuy nhiên, nếu lá lúa khỏe mạnh và không có dấu hiệu của bệnh, thì không cần điều trị và chỉ cần tiếp tục chăm sóc cây lúa như thường lệ.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0xc848cc76461d855a1deeee94813e073e0eb253638533aba1243258174ca50ca4",
+        "block_number": 3
+    },
+    {
+        "id": "20260514_143004",
+        "time": "14/05/2026 14:30:10",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Đảm bảo",
+            "Bón phân",
+            "Vệ sinh"
+        ],
+        "image_path": "/history/images/rice_20260514_143004.jpg",
+        "image_hash": "4751e576bb43619e34978155243c7bfc",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn là một loại bệnh phổ biến trên cây lúa, gây ra bởi nấm. Dấu hiệu của bệnh này bao gồm lá lúa bị khô và có các vằn màu nâu hoặc vàng.\n\nĐể điều trị bệnh Khô vằn, bạn có thể sử dụng thuốc đặc trị như:\n\n* Thuốc chứa hoạt chất Azoxystrobin\n* Thuốc chứa hoạt chất Pyraclostrobin\n* Thuốc chứa hoạt chất Tricyclazole\n\nLiều lượng và cách sử dụng thuốc sẽ tùy thuộc vào sản phẩm cụ thể và tình trạng bệnh trên ruộng. Bạn nên đọc kỹ hướng dẫn sử dụng và tuân thủ các biện pháp an toàn khi sử dụng thuốc.\n\nBên cạnh đó, việc chăm sóc tốt cây lúa cũng giúp ngăn chặn sự lây lan của bệnh, bao gồm:\n\n* Đảm bảo đủ nước và ánh sáng cho cây lúa\n* Bón phân cân đối\n* Vệ sinh ruộng và loại bỏ các cây lúa bị bệnh\n\nNếu lá lúa vẫn khỏe mạnh, không có dấu hiệu bệnh, thì không cần điều trị. Bạn chỉ cần tiếp tục chăm sóc cây lúa tốt hơn bằng cách:\n\n* Đảm bảo đủ nước và ánh sáng cho cây lúa\n* Bón phân cân đối\n* Vệ sinh ruộng và loại bỏ các cây lúa bị bệnh\n\nLá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0xd33dd61e839bd8e975563e2d59c4697bfa0b9e6ad77d0cccc1be23aceeb0f74b",
+        "block_number": 10
+    },
+    {
+        "id": "20260514_142247",
+        "time": "14/05/2026 14:22:55",
+        "diseases": [
+            "Bệnh Đạo ôn (Cháy lá)",
+            "Bệnh Bạc lá (Vi khuẩn)"
+        ],
+        "medications": [
+            "Validamycin: Đây",
+            "Difenoconazole: Đây",
+            "Tưới nước",
+            "Cắt lá",
+            "Sử dụng"
+        ],
+        "image_path": "/history/images/rice_20260514_142247.jpg",
+        "image_hash": "08e532f5f797db6460469277a59bb42a",
+        "advice": "Bệnh Đạo ôn (Cháy lá): Bệnh Đạo ôn (Cháy lá) trên lúa thường do nấm Rhizoctonia solani gây ra. Để điều trị bệnh này, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n* Validamycin: Đây là một loại thuốc chuyên dụng để điều trị bệnh Đạo ôn trên lúa. Liều lượng và cách sử dụng theo hướng dẫn trên nhãn sản phẩm.\n* Metalaxyl: Thuốc này cũng có hiệu quả trong việc kiểm soát bệnh Đạo ôn trên lúa.\n* Difenoconazole: Đây là một loại thuốc chống nấm có hiệu quả cao trong việc điều trị bệnh Đạo ôn trên lúa.\n\nBên cạnh việc sử dụng thuốc đặc trị, bạn cũng nên áp dụng các biện pháp phòng ngừa và chăm sóc cây lúa như:\n\n* Tưới nước hợp lý để tránh làm cây lúa quá ẩm hoặc quá khô.\n* Cắt lá bị nhiễm bệnh để ngăn chặn sự lây lan của bệnh.\n* Sử dụng phân bón cân đối và hợp lý để giúp cây lúa khỏe mạnh và chống chịu tốt với bệnh.\n\nNếu lá lúa của bạn đang khỏe mạnh, tôi sẽ tư vấn: \"Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn như giữ ẩm hợp lý, cung cấp đủ dinh dưỡng và theo dõi thường xuyên để phát hiện sớm các dấu hiệu của bệnh.\"\nBệnh Bạc lá (Vi khuẩn): Để điều trị bệnh Bạc lá (Vi khuẩn) trên lúa, bạn có thể sử dụng các biện pháp sau:\n\n- Sử dụng thuốc đặc trị như: Kasumin 2%, Agrept 5%, Streptomycin 5%.\n- Thực hiện quy trình phun thuốc đúng cách, đảm bảo liều lượng và thời gian cách ly an toàn.\n- Kết hợp với các biện pháp quản lý dịch bệnh tổng hợp như: loại bỏ các nguồn bệnh, cải thiện hệ thống tưới tiêu, tránh sử dụng nước thải để tưới cây.\n- Áp dụng các kỹ thuật canh tác tốt như: sử dụng giống lúa kháng bệnh, luân canh và xen canh.\n\nLưu ý: Điều trị bệnh nên được thực hiện dưới sự hướng dẫn của chuyên gia nông nghiệp và tuân thủ các quy định về an toàn và bảo vệ môi trường.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x76fdf28d4b89f99376df16e648ec3f4d51ee02d6ecc406debc44c0e61b8f7ea7",
+        "block_number": 9
+    },
+    {
+        "id": "20260514_142218",
+        "time": "14/05/2026 14:22:23",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Cắt tỉa",
+            "Cải thiện",
+            "Sử dụng"
+        ],
+        "image_path": "/history/images/rice_20260514_142218.jpg",
+        "image_hash": "183d26c673b01e379e5fe8a04ac0850b",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn là một bệnh phổ biến trên cây lúa, gây ra bởi nấm hoặc vi khuẩn. Để điều trị bệnh khô vằn trên lúa, bạn có thể sử dụng các thuốc đặc trị sau:\n\n- Sử dụng thuốc diệt nấm như Carbendazim hoặc Azoxystrobin\n- Sử dụng thuốc kháng sinh như Streptomycin hoặc Oxytetracycline\n\nTuy nhiên, cần lưu ý rằng việc điều trị bệnh khô vằn cần được thực hiện sớm và kết hợp với các biện pháp phòng ngừa như:\n\n- Cắt tỉa lá bị bệnh\n- Cải thiện điều kiện môi trường\n- Sử dụng giống lúa kháng bệnh\n\nNếu lá lúa của bạn đang khỏe mạnh, tôi sẽ khuyến nghị: \nLá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn, bao gồm cung cấp đủ nước, bón phân cân đối, và kiểm tra thường xuyên để phát hiện sớm các vấn đề có thể xảy ra.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x8b47d64a5c217dbe2e58382454ee01985349b93851e56dd889680f960c6acda8",
+        "block_number": 8
+    },
+    {
+        "id": "20260514_142215",
+        "time": "14/05/2026 14:22:20",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [
+            "Copper",
+            "Mancozeb",
+            "Azoxystrobin"
+        ],
+        "image_path": "/history/images/rice_20260514_142215.jpg",
+        "image_hash": "183d26c673b01e379e5fe8a04ac0850b",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm hoặc vi khuẩn gây ra, biểu hiện bằng các vệt khô màu trắng hoặc vàng trên lá. Điều trị bệnh này thường bao gồm các biện pháp sau:\n\n1. **Thăm khám và chẩn đoán**: Xác định nguyên nhân gây bệnh để chọn giải pháp điều trị phù hợp.\n2. **Thuốc đặc trị**: Sử dụng các loại thuốc diệt nấm hoặc vi khuẩn như Copper oxychloride, Mancozeb, Azoxystrobin,...\n3. **Phòng ngừa tái phát**: Bảo đảm cây lúa nhận đủ nước, ánh sáng, và chất dinh dưỡng. Luân canh cây trồng và sử dụng giống lúa kháng bệnh cũng giúp giảm thiểu rủi ro tái phát.\n\nNếu lá lúa khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn, tôi sẽ nói: \"Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn\". Tuy nhiên, trong tình huống này, bạn đã đề cập đến \"Bệnh Khô vằn\", vì vậy tôi đưa ra lời khuyên trên.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260514_141930",
+        "time": "14/05/2026 14:19:36",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260514_141930.jpg",
+        "image_hash": "183d26c673b01e379e5fe8a04ac0850b",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm hoặc vi khuẩn gây ra. Nếu tình trạng bệnh không quá nghiêm trọng, bạn có thể sử dụng các biện pháp phòng ngừa và điều trị sau:\n\n- Sử dụng thuốc đặc trị: Các loại thuốc như Copper oxychloride, Mancozeb, hoặc thuốc gốc Đồng (như Copper hydroxide) có thể giúp kiểm soát bệnh.\n- Kiểm soát nước: Điều chỉnh hệ thống thủy lợi để tránh úng ngập và duy trì độ ẩm phù hợp cho lúa phát triển.\n- Bón phân cân đối: Bón phân theo nhu cầu của cây lúa, tránh bón phân quá nhiều hoặc quá ít.\n- Cắt tỉa: Loại bỏ các lá bị bệnh nặng để ngăn chặn sự lây lan của bệnh.\n- Luân canh: Trồng các loại cây khác trên cùng một mảnh đất sau mùa vụ để giảm thiểu nguy cơ bệnh.\n\nTuy nhiên, nếu lá đang khỏe mạnh, không có dấu hiệu của bệnh Khô vằn, hãy tập trung vào việc chăm sóc tốt hơn bằng cách:\n- Cung cấp đủ nước và phân bón cho cây.\n- Kiểm tra thường xuyên để phát hiện sớm các vấn đề.\n- Sử dụng các biện pháp phòng ngừa bệnh như luân canh cây trồng và sử dụng giống lúa kháng bệnh.\n- Bảo vệ cây khỏi các yếu tố môi trường khắc nghiệt như nắng nóng, ngập nước.\n\nNếu bạn không chắc chắn về tình trạng của cây lúa hoặc cách điều trị, luôn tốt nhất là tham khảo ý kiến của chuyên gia nông nghiệp hoặc các chuyên gia tại địa phương.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260514_141905",
+        "time": "14/05/2026 14:19:10",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260514_141905.jpg",
+        "image_hash": "4eae08e22613d626b4d224661d434a55",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm Fusarium gây ra. Dấu hiệu của bệnh này là xuất hiện các vằn khô màu vàng hoặc nâu trên lá lúa.\n\nĐể điều trị bệnh Khô vằn, bạn có thể sử dụng các thuốc đặc trị như:\n\n* Carbendazim 50 WP: pha 1-2 g/lít nước và phun 2-3 lần cách nhau 7-10 ngày\n* Propiconazole 25 EC: pha 1-2 ml/lít nước và phun 2-3 lần cách nhau 7-10 ngày\n* Trifloxystrobin 25 WG: pha 1-2 g/lít nước và phun 2-3 lần cách nhau 7-10 ngày\n\nBên cạnh đó, bạn cũng nên áp dụng các biện pháp chăm sóc tốt như:\n\n* Đảm bảo đủ nước cho cây lúa\n* Cung cấp đủ phân bón\n* Loại bỏ các lá bệnh để tránh lây lan\n* Luân canh cây trồng để giảm thiểu nguy cơ nhiễm bệnh\n\nNếu lá lúa của bạn khỏe mạnh, không có dấu hiệu của bệnh Khô vằn, thì không cần điều trị. Thay vào đó, bạn chỉ cần tiếp tục chăm sóc cây lúa tốt bằng cách cung cấp đủ nước, phân bón, và đảm bảo môi trường xung quanh sạch sẽ.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0xe25ee1d1502c1a560cc2d7c98272dfa806096d58f11d8a7f3d3505d5c439f8b2",
+        "block_number": 7
+    },
+    {
+        "id": "20260514_141900",
+        "time": "14/05/2026 14:19:05",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "medications": [],
+        "image_path": "/history/images/rice_20260514_141900.jpg",
+        "image_hash": "4eae08e22613d626b4d224661d434a55",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa là một vấn đề nghiêm trọng. Để điều trị, bạn có thể sử dụng các loại thuốc đặc trị như Chlorothalonil, Mancozeb hoặc Propineb. Tuy nhiên, cần tuân thủ liều lượng và hướng dẫn sử dụng trên nhãn sản phẩm để đảm bảo hiệu quả và an toàn.\n\nNgoài ra, cũng cần áp dụng các biện pháp phòng ngừa như kiểm tra thường xuyên, loại bỏ các cây lúa bị nhiễm bệnh, và sử dụng các phương pháp chăm sóc tốt như tưới nước đều đặn, bón phân cân đối và cắt tỉa cây lúa đúng thời điểm.\n\nNếu lá lúa của bạn khỏe mạnh, không có dấu hiệu bệnh, thì không cần điều trị. Thay vào đó, bạn có thể tập trung vào việc chăm sóc tốt hơn như:\n\n* Tưới nước đều đặn\n* Bón phân cân đối\n* Cắt tỉa cây lúa đúng thời điểm\n* Kiểm tra thường xuyên để phát hiện sớm các vấn đề.\n\nHãy nhớ rằng, phòng ngừa là chìa khóa để kiểm soát bệnh trên lúa.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260514_141606",
+        "time": "14/05/2026 14:16:11",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "/history/images/rice_20260514_141606.jpg",
+        "image_hash": "4eae08e22613d626b4d224661d434a55",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường gây ra bởi nấm Fusarium hoặc Pyricularia. Để điều trị, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Azoxystrobin 250SC (25% Azoxystrobin): liều lượng 200-250 ml/ha (tương đương 20-25 ml/100 lít nước).\n- Tebuconazole 250EC (25% Tebuconazole): liều lượng 200-250 ml/ha (tương đương 20-25 ml/100 lít nước).\n- Pyraclostrobin 250EC (25% Pyraclostrobin): liều lượng 200-250 ml/ha (tương đương 20-25 ml/100 lít nước).\n\nKhi phát hiện bệnh, nên phun thuốc ngay lập tức và lặp lại sau 7-10 ngày nếu cần thiết. Đồng thời, cần áp dụng các biện pháp chăm sóc tốt như cung cấp đủ nước, bón phân hợp lý, và loại bỏ các lá bệnh để ngăn chặn sự lây lan của bệnh.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x816d16a1315a5e6c9dc8a8a4b3ec7d15f7db45459f85f948d8457ac15e75cee9",
+        "block_number": 6
+    },
+    {
+        "id": "20260514_140203",
+        "time": "14/05/2026 14:02:18",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "/history/images/rice_20260514_140203.jpg",
+        "image_hash": "4657519df76fcd69a1b55fa4de958b53",
+        "advice": "Bệnh Khô vằn: Bệnh khô vằn trên lúa thường do nấm gây ra. Để điều trị bệnh này, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Tilt 250 EC\n- Score 250 EC\n- Anvil 50 SC\n\nTuy nhiên, trước khi sử dụng thuốc, bạn cần kiểm tra tình trạng lá lúa của mình. Nếu lá lúa vẫn còn khỏe mạnh và không có triệu chứng của bệnh khô vằn, thì bạn không cần điều trị. Thay vào đó, bạn có thể tập trung vào việc chăm sóc tốt hơn cho cây lúa, bao gồm:\n\n- Cung cấp đủ nước cho cây\n- Bón phân đầy đủ và cân đối\n- Kiểm tra và loại bỏ các loại cỏ dại cạnh tranh với cây lúa\n- Sử dụng biện pháp phòng ngừa bệnh khác như luân canh và vệ sinh đồng ruộng\n\nHãy cho tôi biết tình trạng cụ thể của lá lúa của bạn để tôi có thể tư vấn chính xác hơn.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "0x6d0d82de6335df65a99b9dcc10f64d60b0a173eca8f9b7a2f4f66d9db94f3238",
+        "block_number": 5
+    },
+    {
+        "id": "20260514_135924",
+        "time": "14/05/2026 13:59:40",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "/history/images/rice_20260514_135924.jpg",
+        "image_hash": "4eae08e22613d626b4d224661d434a55",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường do nấm gây ra, đặc biệt là nấm Rhizoctonia solani. Để điều trị, bạn có thể sử dụng các biện pháp sau:\n\n1. Sử dụng thuốc đặc trị: Các loại thuốc như Validamycin, Kasugamycin, hoặc thuốc chứa hoạt chất Carbendazim có thể được sử dụng để điều trị bệnh Khô vằn.\n2. Áp dụng phương pháp chăm sóc tốt hơn:\n * Đảm bảo cung cấp đủ nước cho lúa, nhưng tránh ngập úng.\n * Cung cấp đủ dinh dưỡng cho lúa, đặc biệt là kali và canxi.\n * Kiểm tra thường xuyên và loại bỏ các lá bị bệnh để ngăn chặn sự lây lan.\n * Sử dụng các biện pháp quản lý đất tốt để cải thiện sức khỏe của đất.\n\nNếu lá lúa của bạn khỏe mạnh, tôi sẽ khuyên bạn nên tập trung vào việc chăm sóc tốt hơn để ngăn chặn bệnh phát triển.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260514_135554",
+        "time": "14/05/2026 13:56:05",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "/history/images/rice_20260514_135554.jpg",
+        "image_hash": "183d26c673b01e379e5fe8a04ac0850b",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa thường được gây ra bởi nấm Rhizoctonia solani. Để điều trị bệnh này, bạn có thể sử dụng các thuốc đặc trị như:\n\n- Azoxystrobin 25% SC (thuốc đặc trị nấm)\n- Difenoconazole 25% EC (thuốc đặc trị nấm)\n- Carbendazim 50% WP (thuốc đặc trị nấm)\n\nCách sử dụng:\n- Phun thuốc khi bệnh mới bắt đầu xuất hiện, với liều lượng theo hướng dẫn trên bao bì sản phẩm.\n- Kết hợp với các biện pháp chăm sóc khác như đảm bảo đủ nước, phân bón, và quản lý cỏ dại để ngăn chặn sự lây lan của bệnh.\n\nNếu lá lúa của bạn khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn:\nLá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "4becb682126ac0ec732f1d71d46b375dd1f2be37b3391d32a7da89e2d653ef45",
+        "block_number": 3
+    },
+    {
+        "id": "20260509_153347",
+        "time": "09/05/2026 15:33:47",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "history\\images\\rice_20260509_153347.jpg",
+        "image_hash": "1c319ced17ffa5759bf1160216467059",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn là một loại bệnh phổ biến trên lúa, gây ra bởi nấm Rhizoctonia solani. Dấu hiệu của bệnh là lá lúa xuất hiện các vết khô, vằn, thường bắt đầu từ phần giữa của lá và lan rộng ra.\n\nĐể điều trị bệnh Khô vằn, bạn có thể sử dụng các loại thuốc đặc trị sau:\n\n* Thuốc hóa học: có thể sử dụng các loại thuốc như Carbendazim, Thiophanate-methyl, hoặc hỗn hợp của chúng.\n* Thuốc sinh học: có thể sử dụng các loại thuốc như Trichoderma, Beauveria bassiana, hoặc Bacillus subtilis.\n\nTuy nhiên, trước khi sử dụng thuốc, bạn nên thực hiện các biện pháp phòng ngừa và chăm sóc lúa như sau:\n\n* Đảm bảo đủ nước cho lúa\n* Cung cấp đủ dinh dưỡng cho lúa\n* Loại bỏ các lá bị bệnh\n* Thực hiện chế độ luân canh cây trồng\n\nNếu lá lúa của bạn vẫn còn khỏe mạnh, tôi sẽ tư vấn như sau: Lá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn. Hãy tiếp tục chăm sóc lúa của bạn bằng cách cung cấp đủ nước, dinh dưỡng, và loại bỏ các lá bị bệnh. Điều này sẽ giúp lúa của bạn phát triển tốt và giảm thiểu khả năng bị bệnh.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "ec2e0a687e7cc9980e1e86c79c2835eed11e4b92677d614b79b3097fb4759b39",
+        "block_number": 6
+    },
+    {
+        "id": "20260509_152922",
+        "time": "09/05/2026 15:29:22",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "history\\images\\rice_20260509_152922.jpg",
+        "image_hash": "ae74c5d5a2901875c2923a99079e503f",
+        "advice": "Bệnh Khô vằn: Để điều trị bệnh 'Bách bộ lá' hoặc bệnh 'Khô vằn' trên lúa, bạn có thể sử dụng các loại thuốc đặc trị sau:\n\n1. **Thrix**: Đây là một loại thuốc gốc đồng, có tác dụng chống lại các loại nấm gây bệnh trên lá lúa.\n2. **Copper Oxychloride**: Đây là một loại thuốc gốc đồng, cũng có tác dụng chống lại các loại nấm gây bệnh trên lá lúa.\n3. **Validamycin**: Đây là một loại thuốc gốc streptomycin, có tác dụng chống lại các loại vi khuẩn và nấm gây bệnh trên lá lúa.\n\nCách sử dụng:\n\n- Sử dụng thuốc với liều lượng và thời gian như hướng dẫn trên bao bì.\n- Phun thuốc đều lên toàn bộ cây lúa, đặc biệt là trên lá nhiễm bệnh.\n- Phun thuốc vào buổi sáng hoặc buổi chiều, khi trời không quá nắng.\n\nLưu ý: Cần tuân thủ các quy định về an toàn lao động khi sử dụng thuốc bảo vệ thực vật và không sử dụng quá liều lượng cho phép.\n\nNếu lá lúa khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn:\n\nLá khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn: \n\n- Cung cấp đủ nước cho cây lúa.\n- Bón phân cân đối và hợp lý.\n- Cắt bỏ lá già, tạo điều kiện cho cây lúa phát triển.\n- Kiểm tra thường xuyên để phát hiện sớm các dấu hiệu bệnh.\n",
+        "blockchain_status": "confirmed",
+        "tx_hash": "096e63993d02f378dd77d629c1863982ae70d1e96a6796dff80adbf3aa8c7d0b",
+        "block_number": 5
+    },
+    {
+        "id": "20260509_152716",
+        "time": "09/05/2026 15:27:16",
+        "diseases": [
+            "Bệnh Khô vằn"
+        ],
+        "image_path": "history\\images\\rice_20260509_152716.jpg",
+        "image_hash": "891f9d6747182e148724d314e6198f72",
+        "advice": "Bệnh Khô vằn: Bệnh Khô vằn trên lúa là một bệnh phổ biến do nấm gây ra. Để điều trị bệnh này, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n- Tilt 250 EC (tebuconazole): Sử dụng 0,5-0,75 lít/ha (pha 50-75 ml/20 lít nước), phun 2-3 lần, mỗi lần cách nhau 7-10 ngày.\n- Score 250 EC (difenoconazole): Sử dụng 0,5-0,75 lít/ha (pha 50-75 ml/20 lít nước), phun 2-3 lần, mỗi lần cách nhau 7-10 ngày.\n- Amistar 250 SC (azoxystrobin): Sử dụng 0,5-0,75 lít/ha (pha 50-75 ml/20 lít nước), phun 2-3 lần, mỗi lần cách nhau 7-10 ngày.\n\nNgoài ra, bạn cũng nên áp dụng các biện pháp chăm sóc tốt hơn như:\n\n- Điều chỉnh chế độ tưới tiêu phù hợp để tránh thừa hoặc thiếu nước.\n- Cân đối lượng dinh dưỡng và phân bón cho cây lúa.\n- Thực hiện xoay vòng mùa vụ và luân canh trồng để giảm thiểu bệnh.\n\nNếu lá lúa của bạn khỏe mạnh, không cần điều trị, chỉ đưa ra phương pháp chăm sóc tốt hơn. Tuy nhiên, nếu bạn đã phát hiện ra dấu hiệu của bệnh Khô vằn, nên thực hiện điều trị ngay lập tức để tránh bệnh lan rộng và giảm thiểu thiệt hại cho vụ mùa.\n",
+        "blockchain_status": "pending"
+    },
+    {
+        "id": "20260505_225120",
+        "time": "05/05/2026 22:51:20",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "image_path": "history\\images\\rice_20260505_225120.jpg",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa thường được điều trị bằng cách sử dụng thuốc trừ sâu và cải thiện điều kiện chăm sóc cây. Một số thuốc đặc trị phổ biến cho bệnh Đốm nâu trên lúa bao gồm:\n\n- Azoxystrobin\n- Tebuconazole\n- Pyraclostrobin\n\nCách sử dụng thường bao gồm pha loãng thuốc theo hướng dẫn trên nhãn sản phẩm và phun lên bề mặt lá cây vào buổi sáng hoặc chiều tối. Tuy nhiên, cần đảm bảo tuân thủ các hướng dẫn an toàn khi sử dụng thuốc và tránh phun thuốc vào thời điểm cây đang ra hoa hoặc khi thời tiết quá nóng.\n\nBên cạnh việc sử dụng thuốc, cũng cần chú ý đến các biện pháp chăm sóc tổng thể như đảm bảo đủ nước, bón phân phù hợp, và loại bỏ các nguồn bệnh để ngăn chặn sự lây lan của bệnh.\n\nNếu lá vẫn khỏe mạnh, không có biểu hiện của bệnh, hãy tập trung vào việc chăm sóc cây một cách tốt nhất, bao gồm cung cấp đủ nước, ánh sáng, và bón phân phù hợp.\n"
+    },
+    {
+        "id": "20260505_225013",
+        "time": "05/05/2026 22:50:13",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "image_path": "history\\images\\rice_20260505_225013.jpg",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa là một vấn đề phổ biến trong nông nghiệp Việt Nam. Để điều trị bệnh này, bạn có thể sử dụng các loại thuốc đặc trị như:\n\n* Azoxystrobin\n* Pyraclostrobin\n* Trifloxystrobin\n\nĐây là các loại thuốc có tác dụng chống lại nấm gây bệnh Đốm nâu. Tuy nhiên, để đảm bảo hiệu quả và an toàn, bạn nên tuân thủ các hướng dẫn sau:\n\n* Sử dụng thuốc đúng liều lượng và thời gian khuyến cáo\n* Chuẩn bị thuốc đúng cách và phun đều trên diện tích lúa\n* Phun thuốc khi bệnh vừa xuất hiện để hạn chế sự lây lan\n* Kết hợp với các biện pháp chăm sóc lúa như giữ ẩm, bón phân cân đối và kiểm soát cỏ dại.\n\nNếu lá lúa khỏe mạnh, không có dấu hiệu của bệnh Đốm nâu, bạn có thể tập trung vào chăm sóc lúa tốt hơn bằng cách:\n\n* Cung cấp đầy đủ nước và dinh dưỡng cho lúa\n* Bón phân cân đối và đúng thời điểm\n* Kiểm soát cỏ dại và sâu bệnh hại\n* Giữ cho môi trường lúa sạch sẽ và thông thoáng.\n\nLưu ý rằng, việc sử dụng thuốc hóa học nên được hạn chế tối đa để bảo vệ môi trường và sức khỏe con người. Vì vậy, bạn nên áp dụng các biện pháp phòng ngừa và chăm sóc lúa tốt hơn để giảm thiểu nguy cơ mắc bệnh.\n"
+    },
+    {
+        "id": "20260505_224632",
+        "time": "05/05/2026 22:46:32",
+        "diseases": [
+            "Bệnh Đốm nâu"
+        ],
+        "image_path": "history\\images\\rice_20260505_224632.jpg",
+        "advice": "Bệnh Đốm nâu: Bệnh Đốm nâu trên lúa là một vấn đề nghiêm trọng cần được điều trị kịp thời. Để điều trị bệnh này, bạn có thể sử dụng thuốc đặc trị như sau:\n\n- Sử dụng thuốc trừ nấm như Chlorothalonil, Mancozeb, hoặc Copper oxychloride với liều lượng khuyến cáo.\n- Phun thuốc khi bệnh vừa xuất hiện, sau đó lặp lại sau 7-10 ngày nếu cần.\n- Đồng thời, áp dụng các biện pháp chăm sóc tốt hơn như cung cấp đủ nước, bón phân cân đối, và giữ cho ruộng lúa thông thoáng.\n\nHãy nhớ đọc kỹ hướng dẫn sử dụng thuốc và tuân thủ các khuyến cáo an toàn khi sử dụng thuốc trừ nấm.\n"
+    },
+    {
+        "id": "20260503_223126",
+        "time": "03/05/2026 22:31:26",
+        "diseases": [
+            "Bệnh Bạc lá (Vi khuẩn)"
+        ],
+        "image_path": "history\\images\\rice_20260503_223126.jpg",
+        "advice": "Bệnh Bạc lá (Vi khuẩn): Bệnh Bạc lá (Vi khuẩn) trên lúa là một trong những bệnh hại nghiêm trọng, gây thiệt hại về sản lượng và chất lượng lúa. Dưới đây là một số biện pháp điều trị và phòng ngừa bệnh này:\n\n**Nguyên nhân:** Bệnh bạc lá do vi khuẩn Xanthomonas oryzae gây ra.\n\n**Triệu chứng:** Lá lúa bị vàng nhạt, sau đó chuyển sang màu bạc, thường bắt đầu từ phần lá non và lan dần xuống các lá già.\n\n**Điều trị:**\n\n1. **Thuốc đặc trị:** Sử dụng các loại thuốc như Copper-based (Cuprosan, Copper Oxychloride), Kasumin, hoặc Stretptomycin.\n2. **Phòng ngừa:** Thực hiện các biện pháp phòng ngừa như:\n * Sử dụng giống lúa kháng bệnh.\n * Trồng lúa ở nơi thông thoáng, tránh積 nước.\n * Tránh sử dụng nước từ nguồn nước có chứa vi khuẩn gây bệnh.\n * Không trồng lúa trên đất có tiền sử bị bệnh bạc lá.\n3. **Quản lý bệnh:** Khi phát hiện bệnh, cần:\n * Cắt bỏ và tiêu hủy các lá bị bệnh.\n * Sử dụng thuốc đặc trị ngay lập tức.\n * Đảm bảo đất được thông thoáng và khô ráo.\n\nLưu ý: Cần tuân thủ hướng dẫn sử dụng thuốc của nhà sản xuất và thực hiện các biện pháp phòng ngừa để tránh tái phát bệnh.\n"
+    }
+]

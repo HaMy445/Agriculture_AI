@@ -1,0 +1,29 @@
+# ============================================
+# AI_Agri - Hệ Thống Phát Hiện Bệnh Lá Lúa
+# Requirements.txt - Các gói cần thiết
+# ============================================
+
+# Giao diện web
+streamlit>=1.28.0
+
+# YOLOv8 - Phát hiện vật thể
+ultralytics>=8.0.0
+
+# Xử lý hình ảnh
+pillow>=10.0.0
+opencv-python>=4.8.0
+
+# API LLM Groq
+groq>=0.4.0
+
+# Blockchain Web3
+web3>=1.10.0
+
+# Các thư viện hỗ trợ
+numpy>=1.24.0
+requests>=2.31.0
+
+# ============================================
+# Hướng dẫn cài đặt:
+# pip install -r requirements.txt
+# ============================================

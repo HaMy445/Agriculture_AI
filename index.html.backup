@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 AI_Agri - Phát Hiện Bệnh Lúa</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .wallet-info {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .image-upload {
+            border: 2px dashed #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .image-upload:hover {
+            background: #f0f0f0;
+        }
+
+        .image-upload input {
+            display: none;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .diseases-list {
+            margin: 15px 0;
+        }
+
+        .disease-tag {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .advice-box {
+            background: #f0fdf4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .status-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .status-info {
+            background: #e0f2fe;
+            color: #0c4a6e;
+            border: 1px solid #7dd3fc;
+        }
+
+        .blockchain-info {
+            background: #f3e8ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .tx-hash {
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 12px;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #667eea;
+            animation: spin 1s infinite;
+            margin-right: 5px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .records-container {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .record-item {
+            background: #f9fafb;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 3px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .record-item small {
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            #historyModal > div {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🌾 AI_Agri - Phát Hiện Bệnh Lúa</h1>
+            <div class="wallet-info">
+                <button class="btn-primary" id="connectBtn">🔗 Kết Nối Blockchain</button>
+                <div id="accountInfo" style="color: #666; font-size: 12px;"></div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <!-- LEFT COLUMN: DETECT -->
+            <div>
+                <div class="card">
+                    <h2>📷 Phát Hiện Bệnh</h2>
+                    
+                    <!-- LOAD FROM PHONE -->
+                    <button class="btn-primary" id="loadPhoneBtn" style="width: 100%; margin-bottom: 15px;">
+                        📱 Load Ảnh Từ Điện Thoại
+                    </button>
+
+                    <!-- CAMERA SECTION -->
+                    <div id="cameraSection" style="margin-bottom: 15px;">
+                        <button class="btn-primary" id="startCameraBtn" style="width: 100%; margin-bottom: 10px;">
+                            📱 Mở Camera
+                        </button>
+                        
+                        <div id="cameraPreview" style="display: none; margin-bottom: 10px;">
+                            <video id="cameraVideo" style="width: 100%; border-radius: 8px; background: #000; margin-bottom: 10px;" playsinline></video>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <button class="btn-secondary" id="captureBtn" style="width: 100%;">
+                                    📸 Chụp Ảnh
+                                </button>
+                                <button class="btn-danger" id="closeCameraBtn" style="width: 100%;">
+                                    ✕ Đóng Camera
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; color: #999; margin: 10px 0;">— hoặc —</p>
+                    
+                    <!-- FILE UPLOAD SECTION -->
+                    <div class="image-upload" onclick="document.getElementById('imageInput').click()">
+                        <p>📁 Click để chọn ảnh hoặc kéo thả ảnh vào đây</p>
+                        <input type="file" id="imageInput" accept="image/*">
+                    </div>
+                    
+                    <img id="previewImg" class="preview-image" style="display:none;">
+                    
+                    <button class="btn-secondary" id="detectBtn" style="width: 100%; margin-top: 15px; display: none;">
+                        🔍 Phát Hiện Bệnh
+                    </button>
+                    
+                    <div id="detectStatus" class="status-message"></div>
+                </div>
+
+                <!-- DISEASES & ADVICE -->
+                <div class="card" style="margin-top: 20px;">
+                    <h2>📋 Kết Quả</h2>
+                    
+                    <div id="diseasesContainer" style="display: none;">
+                        <p><strong>🚨 Bệnh phát hiện:</strong></p>
+                        <div id="diseasesList" class="diseases-list"></div>
+                        
+                        <p style="margin-top: 15px;"><strong>💊 Tư vấn điều trị:</strong></p>
+                        <div id="adviceContainer"></div>
+                        
+                        <button class="btn-secondary" id="saveBtn" style="width: 100%; margin-top: 15px;">
+                            💾 Lưu lên Blockchain
+                        </button>
+                    </div>
+                    
+                    <div id="noResultMsg" style="color: #999; text-align: center; padding: 20px;">
+                        Chưa có kết quả. Vui lòng upload ảnh
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: BLOCKCHAIN -->
+            <div>
+                <!-- BLOCKCHAIN STATUS -->
+                <div class="card">
+                    <h2>⛓️ Blockchain Status</h2>
+                    
+                    <div class="blockchain-info">
+                        <p><strong>🔗 Network:</strong> Ganache Local (127.0.0.1:8545)</p>
+                        <p><strong>⚙️ Chain ID:</strong> 1337</p>
+                        <p><strong>📝 Contract:</strong> 0x5b1869D9A4C187F2EAa108f3062412ecf0526b24</p>
+                    </div>
+                    
+                    <div id="blockchainInfo"></div>
+                    
+                    <div id="blockchainStatus" class="status-message"></div>
+                </div>
+
+                <!-- RECORDS -->
+                <div class="card" style="margin-top: 20px;">
+                    <h2>📜 Lịch Sử Hệ Thống</h2>
+                    
+                    <button class="btn-primary" id="refreshBtn" style="width: 100%; margin-bottom: 15px;">
+                        🔄 Tải lại
+                    </button>
+                    
+                    <div id="recordsContainer" class="records-container">
+                        <p style="color: #999; text-align: center;">Đang tải...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISTORY MODAL (Full Screen) -->
+    <div id="historyModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 1200px; margin: 20px auto; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>📜 Lịch Sử Bệnh Lúa - Chi Tiết</h2>
+                <button onclick="document.getElementById('historyModal').style.display='none'" style="background: #f56565; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">✕ Đóng</button>
+            </div>
+
+            <!-- METRICS -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 30px;">
+                <div style="background: #f3e8ff; padding: 15px; border-radius: 8px; text-align: center;">
+                    <p style="color: #666; margin: 0;">💾 Records Local</p>
+                    <p style="font-size: 28px; font-weight: bold; color: #667eea; margin: 10px 0;">
+                        <span id="localCount">0</span>
+                    </p>
+                </div>
+                <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; text-align: center;">
+                    <p style="color: #666; margin: 0;">⛓️ Records Blockchain</p>
+                    <p style="font-size: 28px; font-weight: bold; color: #48bb78; margin: 10px 0;">
+                        <span id="blockchainCount">0</span>
+                    </p>
+                </div>
+                <div style="background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
+                    <p style="color: #666; margin: 0;">💰 Account Balance</p>
+                    <p style="font-size: 20px; font-weight: bold; color: #d97706; margin: 10px 0;">
+                        <span id="accountBalance">-</span> ETH
+                    </p>
+                </div>
+            </div>
+
+            <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+
+            <!-- DETAILED RECORDS LIST -->
+            <div id="historyDetailContainer" style="display: grid; gap: 20px;">
+                <p style="color: #999; text-align: center;">Đang tải dữ liệu...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIG ---
+        // Tự động lấy API URL từ URL hiện tại (support localhost + IP address)
+        const API_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+        const CONTRACT_ADDRESS = "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24";
+        const CONTRACT_ABI = [
+            {
+                "inputs": [
+                    {"internalType": "string", "name": "imageHash", "type": "string"},
+                    {"internalType": "string[]", "name": "diseases", "type": "string[]"},
+                    {"internalType": "string[]", "name": "medications", "type": "string[]"},
+                    {"internalType": "string", "name": "advice", "type": "string"},
+                    {"internalType": "string", "name": "temperature", "type": "string"},
+                    {"internalType": "string", "name": "humidity", "type": "string"}
+                ],
+                "name": "createRecord",
+                "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+
+        // --- STATE ---
+        let provider;
+        let signer;
+        let contract;
+        let userAccount;
+        let currentDetectionData = null;
+
+        // --- EVENT LISTENERS ---
+        document.getElementById('connectBtn').addEventListener('click', connectWallet);
+        document.getElementById('imageInput').addEventListener('change', handleImageUpload);
+        document.getElementById('detectBtn').addEventListener('click', detectDisease);
+        document.getElementById('saveBtn').addEventListener('click', saveToBlockchain);
+        document.getElementById('loadPhoneBtn').addEventListener('click', loadPhoneImage);
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            loadRecords();
+            if (document.getElementById('historyModal').style.display === 'block') {
+                loadHistoryDetails();
+            }
+        });
+
+        // --- CAMERA EVENTS ---
+        let currentStream = null;
+        document.getElementById('startCameraBtn').addEventListener('click', startCamera);
+        document.getElementById('closeCameraBtn').addEventListener('click', stopCamera);
+        document.getElementById('captureBtn').addEventListener('click', capturePhoto);
+
+        // --- DRAG & DROP ---
+        const imageUpload = document.querySelector('.image-upload');
+        imageUpload.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            imageUpload.style.background = '#e0e7ff';
+        });
+        imageUpload.addEventListener('dragleave', () => {
+            imageUpload.style.background = 'transparent';
+        });
+        imageUpload.addEventListener('drop', (e) => {
+            e.preventDefault();
+            imageUpload.style.background = 'transparent';
+            document.getElementById('imageInput').files = e.dataTransfer.files;
+            handleImageUpload({ target: { files: e.dataTransfer.files } });
+        });
+
+        // --- FUNCTIONS ---
+
+        async function connectWallet() {
+            try {
+                if (!window.ethereum) {
+                    showStatus('❌ MetaMask không được tìm thấy. Vui lòng cài đặt MetaMask!', 'error');
+                    return;
+                }
+
+                // 🔴 METAMASK POPUP TỰ ĐỘNG HIỆN ĐỂ KẾT NỐI
+                const accounts = await window.ethereum.request({ 
+                    method: 'eth_requestAccounts' 
+                });
+                userAccount = accounts[0];
+
+                // Setup ethers v6
+                provider = new ethers.BrowserProvider(window.ethereum);
+                signer = await provider.getSigner();
+                contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+
+                // Update UI
+                document.getElementById('connectBtn').textContent = '✅ Kết nối';
+                document.getElementById('connectBtn').disabled = true;
+                document.getElementById('accountInfo').textContent = userAccount.substring(0, 10) + '...';
+
+                showStatus(`✅ Kết nối với ${userAccount}`, 'success');
+                loadBlockchainInfo();
+                loadRecords();
+
+            } catch (error) {
+                if (error.code === 4001) {
+                    showStatus('❌ Bạn đã từ chối kết nối MetaMask', 'error');
+                } else {
+                    showStatus(`❌ Lỗi: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = document.getElementById('previewImg');
+                img.src = event.target.result;
+                img.style.display = 'block';
+                document.getElementById('detectBtn').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function loadPhoneImage() {
+            try {
+                showStatus('📱 Đang load ảnh từ điện thoại...', 'info');
+
+                const response = await fetch(`${API_URL}/api/phone/get-latest`);
+                const result = await response.json();
+
+                if (!response.ok) {
+                    showStatus('❌ ' + (result.message || result.error || 'Không có ảnh từ điện thoại'), 'error');
+                    return;
+                }
+
+                // Display image
+                const img = document.getElementById('previewImg');
+                img.src = `data:image/jpeg;base64,${result.image_base64}`;
+                img.style.display = 'block';
+                document.getElementById('detectBtn').style.display = 'block';
+
+                showStatus(`✅ Ảnh từ điện thoại: ${result.filename}`, 'success');
+
+                // Create hidden file input to use with detector
+                const fileInput = document.getElementById('imageInput');
+                
+                // Decode base64 and create blob
+                const binaryString = atob(result.image_base64);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                const blob = new Blob([bytes], { type: 'image/jpeg' });
+
+                // Create DataTransfer and set files
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(new File([blob], result.filename, { type: 'image/jpeg' }));
+                fileInput.files = dataTransfer.files;
+
+            } catch (error) {
+                showStatus('❌ Lỗi: ' + error.message, 'error');
+            }
+        }
+
+        // --- CAMERA FUNCTIONS ---
+        async function startCamera() {
+            try {
+                // Kiểm tra hỗ trợ camera
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    showStatus('❌ Trình duyệt này không hỗ trợ camera. Vui lòng dùng Chrome, Firefox hoặc Edge!', 'error');
+                    console.warn('MediaDevices API not supported');
+                    return;
+                }
+
+                const video = document.getElementById('cameraVideo');
+                const constraints = {
+                    video: {
+                        facingMode: 'environment', // Dùng camera sau trên điện thoại
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: false
+                };
+
+                currentStream = await navigator.mediaDevices.getUserMedia(constraints);
+                video.srcObject = currentStream;
+                video.play();
+
+                document.getElementById('cameraPreview').style.display = 'block';
+                document.getElementById('startCameraBtn').style.display = 'none';
+                showStatus('✅ Camera đã bật', 'success');
+            } catch (error) {
+                console.error('Camera error:', error);
+                
+                let errorMsg = '❌ Không thể mở camera: ';
+                
+                if (error.name === 'NotAllowedError' || error.message.includes('Permission denied')) {
+                    errorMsg += 'Bạn đã từ chối truy cập camera. Hãy cho phép camera trong cài đặt trình duyệt.';
+                } else if (error.name === 'NotFoundError') {
+                    errorMsg += 'Không tìm thấy camera trên thiết bị này.';
+                } else if (error.name === 'NotReadableError') {
+                    errorMsg += 'Camera đang bị sử dụng bởi ứng dụng khác.';
+                } else if (!navigator.mediaDevices) {
+                    errorMsg += 'Trình duyệt không hỗ trợ camera. Dùng Chrome, Firefox hoặc Edge!';
+                } else {
+                    errorMsg += error.message || 'Lỗi không xác định';
+                }
+                
+                showStatus(errorMsg, 'error');
+                
+                // Gợi ý fallback
+                setTimeout(() => {
+                    showStatus('💡 Gợi ý: Click vào khung "Click để chọn ảnh" để upload từ file thay vì camera', 'info');
+                }, 2000);
+            }
+        }
+
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+            }
+            document.getElementById('cameraPreview').style.display = 'none';
+            document.getElementById('startCameraBtn').style.display = 'block';
+            showStatus('✅ Camera đã đóng', 'info');
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0);
+
+            // Convert canvas to blob and create file
+            canvas.toBlob((blob) => {
+                const file = new File(
+                    [blob], 
+                    `rice-leaf-${Date.now()}.jpg`,
+                    { type: 'image/jpeg' }
+                );
+
+                // Simulate file input
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                document.getElementById('imageInput').files = dataTransfer.files;
+
+                // Show preview
+                const img = document.getElementById('previewImg');
+                img.src = canvas.toDataURL('image/jpeg');
+                img.style.display = 'block';
+                document.getElementById('detectBtn').style.display = 'block';
+
+                // Close camera
+                stopCamera();
+                showStatus('✅ Ảnh đã chụp thành công!', 'success');
+            }, 'image/jpeg', 0.95);
+        }
+
+        async function detectDisease() {
+            try {
+                const fileInput = document.getElementById('imageInput');
+                if (!fileInput.files[0]) {
+                    showStatus('Vui lòng chọn ảnh', 'error');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('image', fileInput.files[0]);
+
+                showStatus('🔍 Đang phát hiện bệnh...', 'info');
+
+                const response = await fetch(`${API_URL}/api/detect`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || 'Phát hiện bệnh thất bại');
+                }
+
+                // Save data
+                currentDetectionData = result;
+
+                // ⭐ DISPLAY ANNOTATED IMAGE WITH BOUNDING BOXES
+                const previewImg = document.getElementById('previewImg');
+                if (result.annotated_image_base64) {
+                    previewImg.src = result.annotated_image_base64;
+                    previewImg.style.display = 'block';
+                    previewImg.style.border = '2px solid #667eea';
+                    previewImg.style.padding = '5px';
+                } else {
+                    previewImg.style.display = 'none';
+                }
+
+                // Display diseases
+                const diseasesList = document.getElementById('diseasesList');
+                diseasesList.innerHTML = result.diseases
+                    .map(d => `<span class="disease-tag">${d}</span>`)
+                    .join('');
+
+                // Display advice
+                const adviceContainer = document.getElementById('adviceContainer');
+                adviceContainer.innerHTML = `<div class="advice-box">${result.advice.replace(/\n/g, '<br>')}</div>`;
+
+                // Show results
+                document.getElementById('diseasesContainer').style.display = 'block';
+                document.getElementById('noResultMsg').style.display = 'none';
+
+                showStatus('✅ Phát hiện hoàn tất', 'success');
+
+            } catch (error) {
+                showStatus(`❌ Lỗi: ${error.message}`, 'error');
+            }
+        }
+
+        async function saveToBlockchain() {
+            try {
+                if (!signer) {
+                    showStatus('❌ Vui lòng kết nối MetaMask trước', 'error');
+                    return;
+                }
+
+                if (!currentDetectionData) {
+                    showStatus('❌ Vui lòng phát hiện bệnh trước', 'error');
+                    return;
+                }
+
+                showStatus('💾 Đang lưu lên blockchain...', 'info');
+
+                // 🔴 METAMASK POPUP TỰ ĐỘNG HIỆN ĐỂ CONFIRM TRANSACTION
+                const tx = await contract.createRecord(
+                    currentDetectionData.image_hash,
+                    currentDetectionData.diseases,
+                    currentDetectionData.medications,
+                    currentDetectionData.advice.substring(0, 500),
+                    "",
+                    ""
+                );
+
+                showStatus('⏳ Chờ transaction được xác nhận...', 'info');
+
+                // Wait for receipt
+                const receipt = await tx.wait();
+
+                showStatus('✅ Lưu thành công!', 'success');
+
+                // Display blockchain info
+                const blockchainInfo = document.getElementById('blockchainInfo');
+                blockchainInfo.innerHTML = `
+                    <div class="blockchain-info">
+                        <p><strong>✅ Transaction Hash:</strong></p>
+                        <div class="tx-hash">${tx.hash}</div>
+                        <p><strong>📦 Block Number:</strong> ${receipt.blockNumber}</p>
+                        <p><strong>⚡ Gas Used:</strong> ${receipt.gasUsed.toString()}</p>
+                        <p><strong>✔️ Status:</strong> ${receipt.status === 1 ? '✅ Thành công' : '❌ Thất bại'}</p>
+                    </div>
+                `;
+
+                // Lưu vào history local
+                await saveLocalHistory(tx.hash, receipt.blockNumber);
+
+                loadRecords();
+                
+                // Reset form
+                setTimeout(() => {
+                    document.getElementById('imageInput').value = '';
+                    document.getElementById('previewImg').style.display = 'none';
+                    document.getElementById('detectBtn').style.display = 'none';
+                    document.getElementById('diseasesContainer').style.display = 'none';
+                    document.getElementById('noResultMsg').style.display = 'block';
+                }, 3000);
+
+            } catch (error) {
+                if (error.code === 4001) {
+                    showStatus('❌ Bạn đã từ chối transaction trên MetaMask', 'error');
+                } else {
+                    showStatus(`❌ Lỗi: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        async function saveLocalHistory(txHash, blockNumber) {
+            try {
+                console.log('💾 Lưu lịch sử blockchain:', { txHash, blockNumber });
+                
+                const payload = {
+                    timestamp: currentDetectionData.timestamp,
+                    diseases: currentDetectionData.diseases,
+                    medications: currentDetectionData.medications,
+                    imagePath: currentDetectionData.image_path,
+                    imageHash: currentDetectionData.image_hash,
+                    advice: currentDetectionData.advice,
+                    tx_hash: txHash,
+                    block_number: blockNumber
+                };
+                
+                console.log('📤 Gửi payload:', payload);
+                
+                const response = await fetch(`${API_URL}/api/history/save-local`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                console.log('✅ Response từ server:', result);
+                
+            } catch (error) {
+                console.error('❌ Lỗi lưu local history:', error);
+            }
+        }
+
+        async function loadBlockchainInfo() {
+            try {
+                if (!provider || !userAccount) return;
+
+                const balance = await provider.getBalance(userAccount);
+                const balanceInEth = ethers.formatEther(balance);
+
+                const blockchainInfo = document.getElementById('blockchainInfo');
+                blockchainInfo.innerHTML += `<p><strong>💰 Balance:</strong> ${parseFloat(balanceInEth).toFixed(4)} ETH</p>`;
+
+            } catch (error) {
+                console.error('Lỗi tải blockchain info:', error);
+            }
+        }
+
+        async function loadRecords() {
+            try {
+                const response = await fetch(`${API_URL}/api/history/get`);
+                const result = await response.json();
+
+                const recordsContainer = document.getElementById('recordsContainer');
+
+                if (!result.records || result.records.length === 0) {
+                    recordsContainer.innerHTML = '<p style="color: #999; text-align: center;">Chưa có records</p>';
+                    return;
+                }
+
+                recordsContainer.innerHTML = `
+                    <div style="text-align: center;">
+                        <p style="font-size: 14px; color: #666;">Có ${result.records.length} ca bệnh được ghi nhận</p>
+                        <button class="btn-secondary" style="width: 100%; margin-top: 10px; cursor: pointer;" onclick="openHistoryModal()">
+                            📂 Xem Chi Tiết Lịch Sử
+                        </button>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Lỗi tải records:', error);
+                document.getElementById('recordsContainer').innerHTML = 
+                    '<p style="color: red; text-align: center;">Lỗi tải dữ liệu</p>';
+            }
+        }
+
+        async function openHistoryModal() {
+            document.getElementById('historyModal').style.display = 'block';
+            await loadHistoryDetails();
+        }
+
+        async function loadHistoryDetails() {
+            try {
+                // Load local history
+                const historyResponse = await fetch(`${API_URL}/api/history/get`);
+                const historyResult = await historyResponse.json();
+
+                // Load blockchain info
+                const blockchainResponse = await fetch(`${API_URL}/api/blockchain/account`);
+                const blockchainData = await blockchainResponse.json();
+
+                // Update metrics
+                document.getElementById('localCount').textContent = historyResult.records ? historyResult.records.length : 0;
+                document.getElementById('blockchainCount').textContent = historyResult.records ? 
+                    historyResult.records.filter(r => r.tx_hash).length : 0;
+                
+                if (blockchainData.balance) {
+                    document.getElementById('accountBalance').textContent = parseFloat(blockchainData.balance).toFixed(2);
+                }
+
+                // Load detailed records
+                const detailContainer = document.getElementById('historyDetailContainer');
+                
+                if (!historyResult.records || historyResult.records.length === 0) {
+                    detailContainer.innerHTML = '<p style="color: #999; text-align: center;">Chưa có lịch sử</p>';
+                    return;
+                }
+
+                detailContainer.innerHTML = historyResult.records
+                    .map((record, idx) => {
+                        const diseaseText = record.diseases ? record.diseases.join(', ') : 'N/A';
+                        const medicationText = record.medications && record.medications.length > 0 ? 
+                            record.medications.slice(0, 2).join(', ') + (record.medications.length > 2 ? '...' : '') : 'N/A';
+                        const imageHash = record.image_hash ? record.image_hash.substring(0, 12) : 'N/A';
+                        const txHash = record.tx_hash ? record.tx_hash.substring(0, 16) : null;
+                        const blockNum = record.block_number || null;
+                        const imagePath = record.image_path || '';
+                        
+                        return `
+                            <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 200px 1fr; background: white;">
+                                <!-- IMAGE -->
+                                <div style="background: #f5f5f5; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+                                    ${imagePath ? `<img src="${imagePath}" style="max-width: 100%; max-height: 200px; border-radius: 5px;">` : '<p style="color: #999;">Không có ảnh</p>'}
+                                </div>
+                                
+                                <!-- DETAILS -->
+                                <div style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between;">
+                                    <div>
+                                        <p style="margin: 0 0 10px 0;"><strong>🚨 Bệnh phát hiện:</strong> ${diseaseText}</p>
+                                        <p style="margin: 0 0 10px 0;"><strong>💊 Thuốc điều trị:</strong> ${medicationText}</p>
+                                        <p style="margin: 0 0 10px 0;"><strong>⏰ Thời gian:</strong> ${record.time || 'N/A'}</p>
+                                        <p style="margin: 0 0 10px 0;"><strong>🔐 Image Hash:</strong> <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 12px;">${imageHash}...</code></p>
+                                    </div>
+                                    
+                                    <div>
+                                        ${txHash ? `
+                                            <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                                <p style="margin: 0 0 5px 0; color: #2e7d32;"><strong>✅ Blockchain Confirmed</strong></p>
+                                                <p style="margin: 0 0 5px 0; font-size: 12px;">⛓️ TX: <code>${txHash}...</code></p>
+                                                ${blockNum ? `<p style="margin: 0; font-size: 12px;">📦 Block: ${blockNum}</p>` : ''}
+                                            </div>
+                                        ` : `
+                                            <div style="background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                                <p style="margin: 0; color: #856404; font-size: 12px;">⏳ Chưa lưu lên blockchain</p>
+                                            </div>
+                                        `}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    })
+                    .join('');
+
+            } catch (error) {
+                console.error('Lỗi tải history details:', error);
+                document.getElementById('historyDetailContainer').innerHTML = 
+                    '<p style="color: red; text-align: center;">Lỗi tải dữ liệu: ' + error.message + '</p>';
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('detectStatus');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.style.display = 'block';
+
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 4000);
+            }
+        }
+
+        // --- INIT ---
+        window.addEventListener('DOMContentLoaded', () => {
+            loadRecords();
+        });
+    </script>
+</body>
+</html>

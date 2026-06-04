@@ -1,271 +1,732 @@
-﻿# 🌾 AI_Agri - Rice Disease Detection with AI & Blockchain
-
-**Hệ thống phát hiện bệnh lúa tự động kết hợp YOLOv8 AI, Groq LLM và Smart Contract trên Blockchain**
-
----
-
-## 🎯 Tính Năng Chính
-
-✅ **Phát hiện bệnh lúa** - YOLOv8 Deep Learning với bounding boxes  
-✅ **Tư vấn điều trị** - Groq AI cung cấp lời khuyên tiếng Việt  
-✅ **Lưu trữ blockchain** - Smart Contract (Solidity) trên Ganache  
-✅ **Lịch sử đầy đủ** - JSON local + blockchain records  
-✅ **Email notifications** - Cảnh báo tự động  
-✅ **Web interface** - Flask API + HTML5  
-
----
-
-## 🍚 5 Loại Bệnh Lúa Được Phát Hiện
-
-| # | Tên Bệnh | Tên Khoa Học | Triệu Chứng |
-|----|----------|-------------|-----------|
-| 1 | **Bệnh Bạc lá** | *Xanthomonas oryzae* | Lá vàng → bạc, mềm, ẩm |
-| 2 | **Bệnh Đốm nâu** | *Helminthosporium oryzae* | Đốm nâu hình bầu dục trên lá |
-| 3 | **Bệnh Đạo ôn** | *Rhizoctonia solani* | Vệt khô từ lá non → lá già |
-| 4 | **Bệnh Khô vằn** | *Fusarium/Pyricularia* | Vằn khô vàng/nâu trên lá |
-| 5 | **Bệnh Lá Khỏe** | - | Không có dấu hiệu bệnh |
-
----
+﻿<h1 align="center">
+🌾 Hệ Thống Phát Hiện Bệnh Lúa Thông Minh Kết Hợp AI & Blockchain
+</h1>
 
 <div align="center">
-  <img src="poster.jpg" alt="Poster" width="250">
+  <img src="poster.jpg" alt="Leaf Icon" width="120">
 </div>
 
-## 🚀 Quick Start (4 Bước)
+<br>
 
-### **Terminal 1: Ganache**
-```powershell
-ganache --host 127.0.0.1 --port 8545 --deterministic
-```
+<div align="center">
 
-### **Terminal 2: Deploy Contract**
-```powershell
-cd c:\Users\Admin\Desktop\AI_Agri\blockchain
-truffle migrate --network development
-```
+[![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](#)
+[![YOLOv8](https://img.shields.io/badge/-YOLOv8-00979D?style=for-the-badge&logo=python&logoColor=white)](#)
+[![Groq](https://img.shields.io/badge/-Groq%20LLM-F7931E?style=for-the-badge)](#)
+[![Blockchain](https://img.shields.io/badge/-Blockchain%20Web3-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)](#)
+[![Ganache](https://img.shields.io/badge/-Ganache%20Ethereum-2D2D2D?style=for-the-badge)](#)
+[![Solidity](https://img.shields.io/badge/-Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)](#)
 
-### **Terminal 3: Flask API**
-```powershell
-cd c:\Users\Admin\Desktop\AI_Agri
-python app_flask.py
-```
+</div>
 
-### **Mở Ứng Dụng**
-```
-http://localhost:5000
-```
+<hr>
 
-📖 Chi tiết: [RUN_COMMANDS.md](RUN_COMMANDS.md)
+<h2 align="center">✨ Mô tả dự án</h2>
 
----
+<p align="justify">
+  <strong>AI_Agri</strong> là một hệ thống <strong>phát hiện bệnh lúa tự động</strong> sử dụng công nghệ <strong>Deep Learning (YOLOv8)</strong>, kết hợp với <strong>AI tư vấn tiếng Việt (Groq LLM)</strong> và <strong>Blockchain Smart Contract (Solidity)</strong> để lưu trữ dữ liệu bất biến. Hệ thống cung cấp:
+  <br><br>
+  ✅ <strong>Phát hiện bệnh lúa chính xác</strong> - YOLOv8 nhận diện 5 loại bệnh với bounding boxes<br>
+  ✅ <strong>Tư vấn điều trị tiếng Việt</strong> - Groq AI (llama-3.3-70b) cung cấp lời khuyên chi tiết<br>
+  ✅ <strong>Lưu trữ blockchain bất biến</strong> - Smart Contract trên Ganache local<br>
+  ✅ <strong>Lịch sử hoàn chỉnh</strong> - JSON local + blockchain records với TX hash<br>
+  ✅ <strong>Cảnh báo email tự động</strong> - Thông báo khi phát hiện bệnh<br>
+  ✅ <strong>Giao diện web đầy đủ</strong> - Flask API + HTML5 Web3 integration<br>
+</p>
 
-## 📁 Cấu Trúc Dự Án
+<hr>
 
-```
-AI_Agri/
-├── app_flask.py              # Flask API (port 5000) ⭐
-├── app.py                    # Streamlit app
-├── blockchain_service.py     # Web3 integration
-├── index.html               # Web3 interface
-├── requirements.txt
-├── models/
-│   └── best.pt              # YOLOv8 model
-├── blockchain/
+<h2 align="center">🎬 Video Demo & Hình Ảnh Hoạt Động Hệ Thống</h2>
+
+<div align="center">
+  <p><strong>Demo Hệ Thống AI_Agri</strong></p>
+  <img src="https://via.placeholder.com/800x450?text=AI_Agri+System+Demo" alt="Video demo" width="80%">
+  <p><em>Phát hiện bệnh lúa, tư vấn điều trị, lưu blockchain</em></p>
+</div>
+
+<hr>
+
+<h2 align="center">📦 Chuẩn Bị</h2>
+
+### 🛠️ Phần Mềm & Công Nghệ
+
+<div align="center">
+
+[![Python](https://img.shields.io/badge/-Python%203.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
+[![Flask](https://img.shields.io/badge/-Flask%202.x-000000?style=for-the-badge&logo=flask&logoColor=white)](#)
+[![YOLOv8](https://img.shields.io/badge/-YOLOv8%208.0%2B-00B4D8?style=for-the-badge)](#)
+[![Groq API](https://img.shields.io/badge/-Groq%20LLM-FF6B35?style=for-the-badge)](#)
+[![Web3.py](https://img.shields.io/badge/-Web3.py%201.10%2B-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)](#)
+[![Ganache](https://img.shields.io/badge/-Ganache%207.x-2D2D2D?style=for-the-badge)](#)
+[![Solidity](https://img.shields.io/badge/-Solidity%200.8.0-363636?style=for-the-badge&logo=solidity&logoColor=white)](#)
+
+### 📱 Frontend & Giao Diện
+
+[![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+[![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![ethers.js](https://img.shields.io/badge/-ethers.js%206-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)](#)
+[![Fetch API](https://img.shields.io/badge/-Fetch%20API-FF6F00?style=for-the-badge)](#)
+
+### 🔧 Công Cụ & Khác
+
+[![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)](#)
+[![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#)
+[![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white)](#)
+[![Jupyter](https://img.shields.io/badge/-Jupyter-F37726?style=for-the-badge&logo=jupyter&logoColor=white)](#)
+
+</div>
+
+<hr>
+
+<h2 align="center">🍚 5 Loại Bệnh Lúa Được Phát Hiện</h2>
+
+<div align="center">
+<table>
+  <tr>
+    <th>#</th>
+    <th>Tên Bệnh</th>
+    <th>Tên Khoa Học</th>
+    <th>Triệu Chứng & Tác Động</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><strong>🟢 Bệnh Bạc lá</strong></td>
+    <td><em>Xanthomonas oryzae</em></td>
+    <td>Lá vàng → bạc, mềm, ẩm. Gây mất năng suất 20-50%</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><strong>🟤 Bệnh Đốm nâu</strong></td>
+    <td><em>Helminthosporium oryzae</em></td>
+    <td>Đốm nâu hình bầu dục trên lá. Làm héo úa lá sớm</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><strong>🔴 Bệnh Đạo ôn</strong></td>
+    <td><em>Pyricularia oryzae</em></td>
+    <td>Vệt khô từ lá non → lá già. Ảnh hưởng thóc chắc</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><strong>🟡 Bệnh Khô vằn</strong></td>
+    <td><em>Fusarium/Rhizoctonia</em></td>
+    <td>Vằn khô vàng/nâu trên lá bẹ. Gây hạt không đầy</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><strong>🟢 Lá Khỏe Mạnh</strong></td>
+    <td>-</td>
+    <td>Không có dấu hiệu bệnh. Sinh trưởng bình thường</td>
+  </tr>
+</table>
+</div>
+
+<hr>
+
+<h2 align="center">📁 Cấu Trúc Dự Án</h2>
+
+<pre align="center">
+📂 AI_Agri/
+├── 📄 <strong>app_flask.py</strong>              # Flask API Backend (Port 5000) ⭐
+├── 📄 <strong>app.py</strong>                   # Streamlit Alternative UI
+├── 📄 <strong>blockchain_service.py</strong>    # Web3 Integration Module
+├── 🌐 <strong>index.html</strong>               # Main Web Interface (Web3 enabled)
+├── 📱 <strong>phone.html</strong>               # Mobile Responsive UI
+├── 📦 <strong>requirements.txt</strong>        # Python Dependencies
+├── 🤖 models/
+│   └── <strong>best.pt</strong>                # YOLOv8 Pretrained Model
+├── ⛓️ blockchain/
 │   ├── contracts/
-│   │   └── RiceDiseaseRecord.sol
+│   │   └── <strong>RiceDiseaseRecord.sol</strong>  # Smart Contract
 │   ├── migrations/
+│   ├── build/contracts/
+│   │   └── RiceDiseaseRecord.json    # ABI JSON
 │   ├── truffle-config.js
 │   └── package.json
-├── dataset/                 # Train/valid/test
-├── history/
-│   ├── data.json           # Records history
-│   └── images/
-└── README.md
-```
+├── 📊 dataset/
+│   ├── train/  (Training images & labels)
+│   ├── valid/  (Validation images)
+│   └── test/   (Test images)
+├── 💾 history/
+│   ├── <strong>data.json</strong>              # Local Records Database
+│   ├── images/                     # Original & Annotated Images
+│   └── phone_uploads/              # Mobile Uploads
+├── 📚 Documentation/
+│   ├── README.md                   # This file
+│   ├── SYSTEM_ARCHITECTURE.md      # Detailed Architecture
+│   ├── ARCHITECTURE_DIAGRAM.md     # Mermaid Diagrams
+│   └── RUN_COMMANDS.md             # Setup Commands
+└── 📝 package.json                 # Project Metadata
+</pre>
 
----
+<hr>
 
-## 🛠️ Công Nghệ
+<h2 align="center">🚀 Hướng Dẫn Cài Đặt & Chạy</h2>
 
-**Backend:**
-- Flask (API Server)
-- YOLOv8 (Object Detection)
-- Groq API (LLM - Llama 3.3-70B)
-- Web3.py (Blockchain)
+### I. Yêu Cầu Hệ Thống
 
-**Frontend:**
-- HTML5 + JavaScript (ethers.js)
-- Streamlit (Alternative UI)
+- **OS**: Windows 10/11, macOS, hoặc Linux
+- **Python**: 3.8+ (khuyến nghị 3.10+)
+- **Node.js**: v14+ (cho Truffle & Ganache)
+- **RAM**: 4GB+ (8GB được khuyến nghị)
+- **Storage**: 5GB trống
 
-**Blockchain:**
-- Solidity (Smart Contract)
-- Ganache (Local Ethereum)
-- Truffle (Deployment)
+### II. Cài Đặt Python & Dependencies
 
-**ML/CV:**
-- OpenCV
-- NumPy
-- Ultralytics
-
----
-
-## 📋 API Endpoints
-
-| Method | Endpoint | Mô Tả |
-|--------|----------|-------|
-| POST | `/api/detect` | Upload ảnh → phát hiện bệnh + bounding boxes |
-| GET | `/api/history/get` | Lấy lịch sử tất cả records |
-| POST | `/api/blockchain/save` | Lưu record lên blockchain |
-| GET | `/api/blockchain/account` | Lấy Ganache account info |
-
----
-
-## 📦 Cài Đặt Dependencies
+<strong>Bước 1: Tạo Virtual Environment</strong>
 
 ```powershell
-# Python packages
-pip install -r requirements.txt
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-# Node packages (Blockchain)
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+<strong>Bước 2: Cài Đặt Python Packages</strong>
+
+```powershell
+pip install -r requirements.txt
+```
+
+**Hoặc cài thủ công:**
+
+```powershell
+pip install Flask>=2.0.0
+pip install flask-cors>=3.0.10
+pip install ultralytics>=8.0.0
+pip install groq>=0.4.0
+pip install web3>=1.10.0
+pip install pillow>=10.0.0
+pip install opencv-python>=4.8.0
+pip install numpy>=1.24.0
+pip install requests>=2.31.0
+```
+
+### III. Cài Đặt Blockchain (Ganache & Truffle)
+
+<strong>Bước 1: Cài Đặt Ganache</strong>
+
+```powershell
+# Cài Ganache CLI
+npm install -g ganache
+
+# Hoặc tải Ganache GUI từ: https://trufflesuite.com/ganache/
+```
+
+<strong>Bước 2: Khởi Động Ganache</strong>
+
+```powershell
+# Terminal 1: Chạy Ganache (Port 8545)
+ganache --host 127.0.0.1 --port 8545 --deterministic
+
+# Kết quả: 10 accounts, 100 ETH mỗi account
+```
+
+<strong>Bước 3: Cài Đặt & Deploy Smart Contract</strong>
+
+```powershell
+# Terminal 2: Deploy contract
 cd blockchain
 npm install
+truffle migrate --network development
+
+# Output: Contract deployed tại: 0x5b1869D9A4C187F2EAa108f3062412ecf0526b24
 ```
 
----
+### IV. Chạy Flask API Server
 
-## ⚙️ Cấu Hình
+```powershell
+# Terminal 3: Chạy Flask
+cd ..
+python app_flask.py
 
-**Groq API Key** - `app_flask.py` line ~30
+# Server running at: http://localhost:5000
+```
+
+### V. Mở Ứng Dụng
+
+```
+Mở trình duyệt: http://localhost:5000
+```
+
+<hr>
+
+<h2 align="center">⚙️ Cấu Hình & Thiết Lập</h2>
+
+### Groq API Key (Bắt Buộc)
+
+1. Lấy API Key từ: https://console.groq.com/
+2. Mở `app_flask.py`, dòng ~30:
+
 ```python
-client_groq = Groq(api_key="gsk_...")
+GROQ_API_KEY = "your_api_key_here"
+client_groq = Groq(api_key=GROQ_API_KEY)
 ```
 
-**Smart Contract Address** - `blockchain_service.py`
+### Smart Contract Address
+
+Sau khi deploy thành công với Truffle:
+- Contract Address: `0x5b1869D9A4C187F2EAa108f3062412ecf0526b24`
+- Nằm trong file: `blockchain_service.py` line ~40
+
+### Email Notifications (Tùy Chọn)
+
 ```python
-self.contract_address = "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24"
+# app_flask.py
+sender_email = "wuveil215@gmail.com"
+receiver_email = "hamy5dvdsz@gmail.com"
+app_password = "kkeu aaum yikq zqlo"
 ```
 
-**Email Notifications** - `app_flask.py` (tùy chọn)
+⚠️ **Lưu ý**: Cần bật 2-Factor Authentication và tạo App Password trên Gmail
 
----
+<hr>
 
-## 📊 Luồng Dữ Liệu
+<h2 align="center">📋 API Endpoints</h2>
 
+<div align="center">
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Endpoint</th>
+    <th>Input</th>
+    <th>Output</th>
+    <th>Mô Tả</th>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><code>/</code></td>
+    <td>-</td>
+    <td>HTML</td>
+    <td>Serve trang chính (index.html)</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><code>/api/health</code></td>
+    <td>-</td>
+    <td>JSON: {status, blockchain}</td>
+    <td>Kiểm tra server sống</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><code>/api/detect</code></td>
+    <td>image (file)</td>
+    <td>diseases[], advice, bbox, image_base64</td>
+    <td><strong>⭐ Phát hiện bệnh + vẽ bbox</strong></td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><code>/api/blockchain/save</code></td>
+    <td>imageHash, diseases, medications, advice</td>
+    <td>tx_hash, block_number</td>
+    <td>Lưu record lên blockchain</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><code>/api/history/get</code></td>
+    <td>-</td>
+    <td>records[], total</td>
+    <td>Lấy tất cả lịch sử</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><code>/api/history/save-local</code></td>
+    <td>timestamp, tx_hash, block_number</td>
+    <td>{success}</td>
+    <td>Update blockchain info</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><code>/api/blockchain/account</code></td>
+    <td>-</td>
+    <td>account_address</td>
+    <td>Lấy Ganache account</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><code>/history/images/*</code></td>
+    <td>filename</td>
+    <td>image file</td>
+    <td>Phục vụ hình ảnh</td>
+  </tr>
+</table>
+</div>
+
+<hr>
+
+<h2 align="center">🔄 Luồng Xử Lý Dữ Liệu (Data Flow)</h2>
+
+<pre align="center">
+┌─────────────────────────────────────────┐
+│  1. User Upload Image (Frontend)        │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  2. POST /api/detect                    │
+│     - Save original image               │
+│     - Calculate SHA256 hash             │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  3. YOLOv8 Inference                    │
+│     - Load models/best.pt               │
+│     - Predict diseases + confidence     │
+│     - Extract bounding boxes            │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  4. Groq AI Advisory (Vietnamese)       │
+│     - For each disease:                 │
+│     - Send Vietnamese prompt            │
+│     - Get treatment recommendations     │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  5. Extract Medications                 │
+│     - Parse advice text                 │
+│     - Find drug names (regex + keywords)│
+│     - Return max 5 medications          │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  6. Draw Bounding Boxes (PIL + Font)    │
+│     - Support Vietnamese text           │
+│     - Color code by disease             │
+│     - Save annotated image              │
+│     - Convert to Base64                 │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  7. Save to Local History (JSON)        │
+│     - history/data.json                 │
+│     - Store all metadata                │
+│     - Mark as "pending" blockchain      │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  8. Send Email Notification             │
+│     - Only if NOT "Lá khỏe mạnh"       │
+│     - Gmail SMTP (port 587)             │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  9. Return JSON Response to Frontend    │
+│     - diseases[], advice, medications   │
+│     - image_base64 (for display)        │
+│     - timestamp, boxes info             │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  10. User Click "Save to Blockchain"    │
+│      - POST /api/blockchain/save        │
+│      - Web3 call to Ganache             │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  11. Smart Contract: createRecord()     │
+│      - Execute on blockchain            │
+│      - Return TX hash + block number    │
+│      - Emit DiseaseRecordCreated event  │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│  12. Update History with Blockchain Info│
+│      - Status: "confirmed"              │
+│      - Store TX hash, block number      │
+│      - Ready for verification           │
+└─────────────────────────────────────────┘
+</pre>
+
+<hr>
+
+<h2 align="center">🧠 Giải Thích Hệ Thống Chi Tiết</h2>
+
+### I. Thành Phần Backend (`app_flask.py`)
+
+**Port**: 5000  
+**Framework**: Flask + CORS
+
+**Các Hàm Chính:**
+
+```python
+# 1. Phát hiện bệnh
+POST /api/detect
+  ├─ Nhận: image file
+  ├─ YOLOv8 predict(conf=0.5, imgsz=640)
+  ├─ Output: [diseases[], confidence[], bbox[]]
+  └─ Return: JSON + base64 image
+
+# 2. Tư vấn AI
+get_treatment_advice(disease_name_vi)
+  ├─ Model: llama-3.3-70b-versatile
+  ├─ Prompt: "Bạn là chuyên gia nông nghiệp VN..."
+  └─ Output: Vietnamese treatment text
+
+# 3. Extract thuốc
+extract_medications(advice_text)
+  ├─ Parse lines with "-" hoặc "*"
+  ├─ Regex: Azoxystrobin, Tebuconazole, etc.
+  └─ Output: medications[] (max 5)
+
+# 4. Vẽ Bounding Boxes (PIL)
+draw_bounding_boxes(image, boxes_info)
+  ├─ Load font: arial.ttf (Windows)
+  ├─ For each box:
+  │  ├─ Draw rectangle (color by disease)
+  │  ├─ Draw label + confidence
+  │  └─ Draw background box
+  └─ Output: annotated_image_base64
+
+# 5. Lưu Local
+save_to_history(...)
+  ├─ Record: {id, time, diseases, medications, 
+  │            image_path, image_hash, advice, 
+  │            blockchain_status, tx_hash, block_number}
+  └─ File: history/data.json
+
+# 6. Gửi Email
+send_email_notification(diseases, advice)
+  ├─ SMTP: smtp.gmail.com:587
+  ├─ From: wuveil215@gmail.com
+  └─ Only if NOT "Lá khỏe mạnh"
 ```
-1. User Upload Image
-       ↓
-2. YOLOv8 Detection + Bounding Boxes
-       ↓
-3. Groq AI (Vietnamese Treatment Advice)
-       ↓
-4. Save to JSON Local + Blockchain
-       ↓
-5. Email Notification (if enabled)
-       ↓
-6. Display Results + History
+
+### II. Thành Phần Blockchain (`blockchain_service.py`)
+
+**Provider**: Web3(HTTPProvider("http://127.0.0.1:8545"))  
+**Network**: Ganache Local (ChainID: 5777)
+
+**Các Phương Thức:**
+
+```python
+class BlockchainService:
+  
+  def __init__(provider_url, contract_address, contract_abi)
+    ├─ Connect Web3
+    ├─ Load ABI from blockchain/build/contracts/...
+    └─ Initialize contract
+  
+  def save_disease_record(image_hash, diseases, 
+                         medications, advice, temp, humidity)
+    ├─ Call: contract.createRecord(...)
+    ├─ Wait: wait_for_transaction_receipt(tx_hash)
+    └─ Return: {tx_hash, block_number, status, gas_used}
+  
+  def get_farmer_records(farmer_address)
+    ├─ Call: getFarmerRecords(address)
+    └─ Return: [recordId1, recordId2, ...]
+  
+  def get_farmer_records_details(farmer_address)
+    ├─ Call: getFarmerRecordsDetails(address)
+    └─ Return: [DiseaseRecord{}, ...]
 ```
 
----
+### III. Smart Contract (`RiceDiseaseRecord.sol`)
 
-## 🔐 Blockchain Features
+**Solidity**: 0.8.0  
+**License**: CC BY 4.0
 
-- **Smart Contract**: Ghi lại loại bệnh, thuốc, tư vấn, timestamp
-- **Record Storage**: Trên Ganache local (127.0.0.1:8545)
-- **Data Integrity**: SHA-256 hash của hình ảnh
-- **Transaction Hash**: Lưu TX hash + block number
+**Data Structure:**
 
----
-
-## 📸 Kết Quả Phát Hiện
-
-API trả về:
-- ✅ Danh sách bệnh phát hiện
-- ✅ Confidence scores (%)
-- ✅ **Bounding boxes** (tọa độ + label)
-- ✅ Ảnh annotated (base64)
-- ✅ Lời khuyên tiếng Việt
-- ✅ Danh sách thuốc trị
-
----
-
-## 🎓 Example Response
-
-```json
-{
-  "success": true,
-  "diseases": ["Bệnh Đốm nâu"],
-  "confidence": 0.95,
-  "annotated_image_base64": "data:image/jpeg;base64,...",
-  "boxes": [
-    {
-      "class": "Bệnh Đốm nâu",
-      "confidence": 0.95,
-      "coords": [100, 150, 300, 450]
-    }
-  ],
-  "medications": ["Azoxystrobin", "Tebuconazole"],
-  "advice": "Phun thuốc mỗi 7-10 ngày...",
-  "tx_hash": "0x816d...",
-  "block_number": 6
+```solidity
+struct DiseaseRecord {
+  uint256 id;                  // Auto-increment
+  address farmer;              // msg.sender
+  string imageHash;            // SHA-256 (32 chars)
+  string[] diseases;           // ["Bệnh Bạc lá", ...]
+  string[] medications;        // ["Azoxystrobin", ...]
+  string advice;               // AI tư vấn (max 500 chars)
+  uint256 timestamp;           // block.timestamp
+  string temperature;          // Optional
+  string humidity;             // Optional
 }
 ```
 
----
+**Functions:**
 
-## 📞 Contact & Support
+```solidity
+✅ createRecord(imageHash, diseases[], medications[], 
+               advice, temperature, humidity)
+   → Creates new record, emits DiseaseRecordCreated
+   
+✅ getRecord(recordId)
+   → Returns DiseaseRecord struct
+   
+✅ getFarmerRecords(farmer)
+   → Returns uint256[] recordIds
+   
+✅ getFarmerRecordsDetails(farmer)
+   → Returns DiseaseRecord[] for farmer
+   
+✅ getTotalRecords()
+   → Returns total count
+   
+✅ updateAdvice(recordId, newAdvice)
+   → Update advice (owner only)
+```
 
-- 📧 Email: `hamy5dvdsz@gmail.com`
-- 🌐 Ganache: `127.0.0.1:8545`
-- 🔗 Contract: `0x5b1869D9A4C187F2EAa108f3062412ecf0526b24`
+**Events:**
 
----
+```solidity
+event DiseaseRecordCreated(
+  uint256 indexed recordId,
+  address indexed farmer,
+  uint256 timestamp,
+  string[] diseases
+)
 
-## 📄 License
+event DiseaseRecordUpdated(
+  uint256 indexed recordId,
+  address indexed farmer,
+  uint256 timestamp
+)
+```
 
-CC BY 4.0 - Agricultural Research
+### IV. Frontend (`index.html`)
 
----
+**Features:**
+- ✅ Web3 Integration (ethers.js v6)
+- ✅ MetaMask Wallet Connect
+- ✅ Drag-Drop Image Upload
+- ✅ Real-time Results Display
+- ✅ Bounding Box Visualization
+- ✅ Blockchain TX Info
+- ✅ History Management
+- ✅ Responsive Design
 
-**Happy Farming! 🌾✨**
-- **Tính năng**:
-  - Tìm kiếm theo loại bệnh
-  - Lọc theo ngày
-  - Xem chi tiết lịch sử blockchain
-  - Xuất báo cáo
+**Key Components:**
+1. Navbar: Logo + Wallet Badge
+2. Upload Section: Drag-drop + Preview
+3. Results Card: Annotated image + Advice
+4. Diseases List: With severity badges
+5. Blockchain Info: TX Hash + Block#
+6. History Table: All records with TX status
 
----
+<hr>
 
-## 4. Công Nghệ Sử Dụng
+<h2 align="center">📸 Kết Quả Hiển Thị & Demo</h2>
 
-### Backend
-- **Python 3.8+**: Ngôn ngữ chính
-- **TensorFlow 2.x**: Framework Deep Learning
-- **OpenCV**: Xử lý hình ảnh
-- **Streamlit**: Framework tạo web app
-- **Web3.py**: Tương tác với blockchain
-- **Solidity**: Viết Smart Contract
+<div align="center">
+  <p><strong>Giao Diện Chính - Phát Hiện Bệnh</strong></p>
+  <img src="https://via.placeholder.com/900x600?text=Main+Interface+-+Disease+Detection" alt="Main UI" width="100%">
+  <p><em>Upload ảnh → Hiển thị kết quả phát hiện + tư vấn tiếng Việt</em></p>
+</div>
 
-### Frontend
-- **Streamlit**: Giao diện người dùng
-- **HTML/CSS**: Styling
-- **JavaScript**: Tương tác động
+<br>
 
-### Blockchain
-- **Ethereum**: Network blockchain
-- **Ganache**: Local blockchain development
-- **MetaMask**: Ví điện tử
-- **Truffle**: Công cụ phát triển Smart Contract
+<div align="center">
+  <p><strong>Kết Quả Phát Hiện với Bounding Boxes</strong></p>
+  <img src="https://via.placeholder.com/900x600?text=Detection+Results+with+Bboxes" alt="Detection Results" width="100%">
+  <p><em>Ảnh được vẽ bounding box, label tiếng Việt, confidence score</em></p>
+</div>
 
-### Database
-- **Smart Contract Storage**: Lưu trữ dữ liệu trên blockchain
-- **JSON Files**: Lưu trữ metadata cục bộ (tùy chọn)
+<br>
 
-### Bảo Mật
-- **SHA-256**: Hashing hình ảnh
-- **KECCAK-256**: Hashing blockchain
-- **RSA/ECDSA**: Chữ ký số
+<div align="center">
+  <p><strong>Lịch Sử & Blockchain Records</strong></p>
+  <img src="https://via.placeholder.com/900x600?text=History+and+Blockchain" alt="History" width="100%">
+  <p><em>Xem tất cả records, TX hash, block number, trạng thái blockchain</em></p>
+</div>
 
----
+<br>
+
+<div align="center">
+  <p><strong>Tư Vấn AI Tiếng Việt</strong></p>
+  <img src="https://via.placeholder.com/900x600?text=Vietnamese+AI+Advice" alt="AI Advice" width="100%">
+  <p><em>Groq LLM cung cấp lời khuyên chi tiết về điều trị bệnh</em></p>
+</div>
+
+<hr>
+
+<h2 align="center">🔐 Bảo Mật & Error Handling</h2>
+
+### ✅ Implemented Security
+
+- **Image Hash**: SHA-256 để xác minh tính toàn vẹn
+- **Blockchain**: Immutable records on-chain
+- **CORS**: Enabled for cross-origin requests
+- **Error Handling**: Try-catch trên tất cả operations
+- **Input Validation**: Kiểm tra image format, size
+- **Email Validation**: Check @ symbol trước gửi
+
+### ⚠️ Known Issues (Development)
+
+- API Keys hardcoded (should use .env)
+- No authentication required (development mode)
+- Ganache is local (not public)
+- Gmail app password in plain text
+
+### 🔧 Recommended Security Measures
+
+```bash
+# 1. Create .env file
+echo "GROQ_API_KEY=your_key_here" > .env
+echo "GMAIL_PASSWORD=your_password_here" >> .env
+
+# 2. Load from environment
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("GROQ_API_KEY")
+
+# 3. Use HTTPS in production
+# 4. Add authentication layer
+# 5. Implement rate limiting
+```
+
+<hr>
+
+<h2 align="center">📚 Tài Liệu Tham Khảo Thêm</h2>
+
+- [SYSTEM_ARCHITECTURE.md](SYSTEM_ARCHITECTURE.md) - Kiến trúc chi tiết
+- [ARCHITECTURE_DIAGRAM.md](ARCHITECTURE_DIAGRAM.md) - Mermaid diagrams
+- [RUN_COMMANDS.md](RUN_COMMANDS.md) - Lệnh khởi động
+- [YOLOv8 Docs](https://docs.ultralytics.com/)
+- [Groq API Docs](https://console.groq.com/docs)
+- [Web3.py Docs](https://web3py.readthedocs.io/)
+- [Solidity Docs](https://docs.soliditylang.org/)
+
+<hr>
+
+<h2 align="center">🤝 Team & Credits</h2>
+
+<div align="center">
+  <p><strong>AI_Agri Development Team</strong></p>
+  <p>
+    Dự án này được phát triển để hỗ trợ nông dân Việt Nam trong việc phát hiện và điều trị bệnh lúa
+    sử dụng công nghệ AI & Blockchain.
+  </p>
+  <p>
+    <strong>Contributors & Researchers:</strong><br>
+    - Machine Learning Engineer<br>
+    - Blockchain Developer<br>
+    - Full-Stack Developer<br>
+    - Agricultural Expert<br>
+  </p>
+</div>
+
+<hr>
+
+<h2 align="center">📝 License & Terms</h2>
+
+**License**: CC BY 4.0 - Agricultural Research  
+**Author**: AI_Agri Team  
+**Year**: 2024  
+**Status**: Active Development
+
+Sử dụng dự án này phải ghi nguồn và không được sử dụng cho mục đích thương mại mà không có phép phép.
+
+<hr>
+
+<div align="center">
+  <h3>✨ Cảm Ơn Vì Đã Sử Dụng AI_Agri ✨</h3>
+  <p><strong>Chúc các bạn nông dân có năng suất lúa cao và bệnh tật ít hơn!</strong></p>
+  <p><strong>🌾 Happy Farming! 🌾</strong></p>
+</div>
+
 
 ## 5. Hướng Dẫn Cài Đặt Chi Tiết
 
@@ -769,5 +1230,3 @@ Cảm ơn các cá nhân và tổ chức đã hỗ trợ dự án:
 ---
 
 © 2024 AI_Agri. All rights reserved.
-#   b l o c k c h a i n _ A I _ A g r i  
- 

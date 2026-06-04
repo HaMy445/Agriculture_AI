@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 AI_Agri - Chụp Ảnh Lúa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+        }
+
+        #cameraVideo {
+            width: 100%;
+            border-radius: 10px;
+            background: #000;
+            margin: 15px 0;
+            display: none;
+        }
+
+        #previewImg {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 3px solid #667eea;
+            display: none;
+        }
+
+        .camera-controls {
+            display: none;
+            gap: 10px;
+        }
+
+        .camera-controls button {
+            flex: 1;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .status-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 2px solid #86efac;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #fca5a5;
+        }
+
+        .status-info {
+            background: #e0f2fe;
+            color: #0c4a6e;
+            border: 2px solid #7dd3fc;
+        }
+
+        .status-warning {
+            background: #fef3c7;
+            color: #92400e;
+            border: 2px solid #fcd34d;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-area {
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 15px 0;
+        }
+
+        .upload-area:hover {
+            background: #f0f0f0;
+            border-color: #5568d3;
+        }
+
+        .upload-area p {
+            color: #666;
+            margin: 0;
+        }
+
+        .step-info {
+            background: #f0fdf4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #166534;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🌾 AI_Agri</h1>
+            <p>📱 Chụp Ảnh Lúa & Gửi Cho Máy Tính</p>
+        </div>
+
+        <!-- FILE UPLOAD SECTION -->
+        <div class="section">
+            <h2>📁 Chọn Ảnh Từ Thư Viện</h2>
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <p>📂 Click để chọn ảnh từ thư viện</p>
+            </div>
+            <input type="file" id="fileInput" class="file-input" accept="image/*">
+
+            <p class="step-info">
+                💡 Chọn ảnh đã chụp hoặc chụp ảnh mới trong dialog này
+            </p>
+        </div>
+
+        <!-- CAMERA SECTION (BỎ QUAT NẾU KHÔNG CẦN) -->
+        <div class="section" style="opacity: 0.6;">
+            <h2>📷 Hoặc Mở Camera (Có Thể Không Hoạt Động)</h2>
+            <button class="btn-primary" id="startCameraBtn">📹 Mở Camera</button>
+
+        <!-- PREVIEW -->
+        <div class="section">
+            <h2>✓ Ảnh Đã Chọn</h2>
+            <img id="previewImg">
+        </div>
+
+        <!-- UPLOAD SECTION -->
+        <div class="section">
+            <h2>📤 Bước 2: Gửi Cho Máy Tính</h2>
+            <button class="btn-primary" id="uploadBtn" style="display: none;">
+                ⬆️ Gửi Ảnh Lên Máy Tính
+            </button>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Đang gửi...</p>
+            </div>
+
+            <p class="step-info">
+                💡 Máy tính sẽ nhận ảnh và phát hiện bệnh tự động
+            </p>
+        </div>
+
+        <!-- STATUS MESSAGES -->
+        <div id="statusMsg" class="status-message"></div>
+
+        <!-- INSTRUCTIONS -->
+        <div style="background: #f3e8ff; padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 13px; color: #666;">
+            <p><strong>📋 Hướng dẫn:</strong></p>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Chụp ảnh lá lúa bằng camera</li>
+                <li>Click "Gửi Ảnh Lên Máy Tính"</li>
+                <li>Máy tính sẽ nhận ảnh</li>
+                <li>Máy tính sẽ hiển thị kết quả phát hiện bệnh</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // CONFIG
+        const API_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+        
+        // STATE
+        let currentStream = null;
+        let capturedImage = null;
+
+        // EVENT LISTENERS
+        document.getElementById('startCameraBtn').addEventListener('click', startCamera);
+        document.getElementById('closeCameraBtn').addEventListener('click', stopCamera);
+        document.getElementById('captureBtn').addEventListener('click', capturePhoto);
+        document.getElementById('uploadBtn').addEventListener('click', uploadImage);
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+        // FUNCTIONS
+        async function startCamera() {
+            try {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    showStatus('❌ Trình duyệt không hỗ trợ camera!', 'error');
+                    return;
+                }
+
+                const video = document.getElementById('cameraVideo');
+                const constraints = {
+                    video: {
+                        facingMode: 'environment',
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: false
+                };
+
+                currentStream = await navigator.mediaDevices.getUserMedia(constraints);
+                video.srcObject = currentStream;
+                video.play();
+
+                document.getElementById('cameraContainer').style.display = 'block';
+                document.getElementById('cameraControls').style.display = 'flex';
+                document.getElementById('startCameraBtn').style.display = 'none';
+                showStatus('✅ Camera đã bật', 'success');
+            } catch (error) {
+                console.error('Camera error:', error);
+                let msg = '❌ Lỗi camera: ';
+                if (error.name === 'NotAllowedError') {
+                    msg += 'Bạn chưa cho phép truy cập camera. Kiểm tra cài đặt trình duyệt!';
+                } else if (error.name === 'NotFoundError') {
+                    msg += 'Không tìm thấy camera trên thiết bị.';
+                } else {
+                    msg += error.message;
+                }
+                showStatus(msg, 'error');
+            }
+        }
+
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+            }
+            document.getElementById('cameraContainer').style.display = 'none';
+            document.getElementById('cameraControls').style.display = 'none';
+            document.getElementById('startCameraBtn').style.display = 'block';
+            showStatus('✅ Camera đã đóng', 'info');
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0);
+
+            capturedImage = canvas.toDataURL('image/jpeg');
+            
+            // Show preview
+            const previewImg = document.getElementById('previewImg');
+            previewImg.src = capturedImage;
+            previewImg.style.display = 'block';
+
+            // Show upload button
+            document.getElementById('uploadBtn').style.display = 'block';
+
+            stopCamera();
+            showStatus('✅ Ảnh chụp thành công!', 'success');
+        }
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                capturedImage = event.target.result;
+                
+                const previewImg = document.getElementById('previewImg');
+                previewImg.src = capturedImage;
+                previewImg.style.display = 'block';
+
+                document.getElementById('uploadBtn').style.display = 'block';
+                showStatus('✅ Ảnh được chọn!', 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function uploadImage() {
+            if (!capturedImage) {
+                showStatus('❌ Chưa có ảnh để gửi', 'error');
+                return;
+            }
+
+            try {
+                document.getElementById('uploadBtn').style.display = 'none';
+                document.getElementById('loading').style.display = 'block';
+
+                // Convert base64 to blob
+                const response = await fetch(capturedImage);
+                const blob = await response.blob();
+
+                // Send to server
+                const formData = new FormData();
+                formData.append('image', blob, 'phone_image.jpg');
+
+                const uploadResponse = await fetch(`${API_URL}/api/phone/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await uploadResponse.json();
+
+                document.getElementById('loading').style.display = 'none';
+
+                if (uploadResponse.ok) {
+                    showStatus('✅ ' + result.message + '\n💻 Máy tính sẽ nhận ảnh ngay!', 'success');
+                    
+                    // Reset
+                    setTimeout(() => {
+                        capturedImage = null;
+                        document.getElementById('previewImg').style.display = 'none';
+                        document.getElementById('fileInput').value = '';
+                        document.getElementById('uploadBtn').style.display = 'none';
+                    }, 2000);
+                } else {
+                    showStatus('❌ ' + (result.error || 'Gửi ảnh thất bại'), 'error');
+                    document.getElementById('uploadBtn').style.display = 'block';
+                }
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('uploadBtn').style.display = 'block';
+                showStatus('❌ Lỗi: ' + error.message, 'error');
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusMsg = document.getElementById('statusMsg');
+            statusMsg.textContent = message;
+            statusMsg.className = `status-message status-${type}`;
+            statusMsg.style.display = 'block';
+
+            setTimeout(() => {
+                statusMsg.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

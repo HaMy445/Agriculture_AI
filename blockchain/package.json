@@ -1,0 +1,22 @@
+{
+  "name": "rice-disease-blockchain",
+  "version": "1.0.0",
+  "description": "Hệ thống lưu trữ bệnh lúa trên blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test",
+    "migrate": "truffle migrate --network development",
+    "migrate-reset": "truffle migrate --network development --reset",
+    "compile": "truffle compile",
+    "console": "truffle console --network development"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "web3": "^1.10.0"
+  },
+  "devDependencies": {
+    "truffle": "^5.11.5",
+    "ganache": "^7.9.1",
+    "@truffle/hdwallet-provider": "^2.1.15"
+  }
+}
