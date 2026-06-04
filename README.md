@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-  <img src="poster.jpg" alt="Leaf Icon" width="120">
+  <img src="poster.jpg" alt="Leaf Icon" width=780">
 </div>
 
 <br>
@@ -33,16 +33,6 @@
   ✅ <strong>Cảnh báo email tự động</strong> - Thông báo khi phát hiện bệnh<br>
   ✅ <strong>Giao diện web đầy đủ</strong> - Flask API + HTML5 Web3 integration<br>
 </p>
-
-<hr>
-
-<h2 align="center">🎬 Video Demo & Hình Ảnh Hoạt Động Hệ Thống</h2>
-
-<div align="center">
-  <p><strong>Demo Hệ Thống AI_Agri</strong></p>
-  <img src="https://via.placeholder.com/800x450?text=AI_Agri+System+Demo" alt="Video demo" width="80%">
-  <p><em>Phát hiện bệnh lúa, tư vấn điều trị, lưu blockchain</em></p>
-</div>
 
 <hr>
 
