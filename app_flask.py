@@ -10,7 +10,7 @@ Flask Backend API cho AI_Agri Web3 App
 from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 from ultralytics import YOLO
-
+from groq import Groq
 from PIL import Image, ImageDraw, ImageFont
 import io
 import hashlib
@@ -28,7 +28,8 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 # --- KHỞI TẠO ---
-
+GROQ_API_KEY = ""
+client_groq = Groq(api_key=GROQ_API_KEY)
 
 # Blockchain service
 try:
@@ -137,7 +138,7 @@ def extract_medications(advice_text):
 def send_email_notification(diseases, advice_text):
     """Gửi email cảnh báo"""
     sender_email = "wuveil215@gmail.com"
-    receiver_email = "hamy5dvdsz@gmail.com"
+    receiver_email = "hamy572002@gmail.com"
     app_password = "kkeu aaum yikq zqlo"
     
     if not receiver_email or "@" not in receiver_email or receiver_email.startswith("("):
